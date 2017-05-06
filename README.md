@@ -10,5 +10,8 @@ urllib
 
 Download python file and replace it with your own account data and link to your own path/to/admin/api.php
 
+# Twitter acces keys and tokens
+On they own website it is quite clearly explained: https://dev.twitter.com/oauth/overview/application-owner-access-tokens
+
 # Reddit
 https://www.reddit.com/r/pihole/comments/67umvj/need_help_with_doing_a_daily_pihole_tweet/
