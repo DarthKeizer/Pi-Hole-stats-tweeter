@@ -12,6 +12,7 @@ Download python file and replace it with your own account data and link to your 
 
 # Cronjob
 This will tweet your stats at 23:59 everyday
+
 59 23 * * * sudo python3 /home/pi/Desktop/twittertweeter.py >/dev/null 2>&1
 
 # Twitter acces keys and tokens
