@@ -16,6 +16,7 @@ sudo python3 -m pip install urllib
 sudo python3 -m pip install json
 sudo python3 -m pip install simplejson
 sudo python3 -m pip install datetime
+sudo wget https://raw.githubusercontent.com/DarthKeizer/Pi-Hole-stats-tweeter/master/twittertweeter-ads.py -P /home/pi/Desktop/
 CONSUMER_KEY=$(whiptail --inputbox "Consumer Key" 20 60 "" 3>&1 1>&2 2>&3)
 CONSUMER_SECRET=$(whiptail --inputbox "Consumer Secret" 20 60 "" 3>&1 1>&2 2>&3)
 ACCESS_TOKEN=$(whiptail --inputbox "Access Token" 20 60 "" 3>&1 1>&2 2>&3)
