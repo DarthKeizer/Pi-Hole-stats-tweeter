@@ -11,7 +11,7 @@ data = urlopen('path/to/admin/api.php').read() #bytes
 body = data.decode('utf-8')
 data = json.loads(body)
 
-# Create tweet, adjust %.2f for amount of decimals you want
+# Create tweet, adjust %.2f for amount of decimals you want or %i for a whole number
 template_tweet = "\nAds Blocked: %s\nAds Percentage Today: %.2f\nDNS Queries Today: %s\nDomains Being Blocked: %s"
 data = template_tweet % (data['ads_blocked_today'],
                           float (data['ads_percentage_today']),
