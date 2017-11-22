@@ -3,7 +3,7 @@ Send a daily tweet with your Pi-Hole statistics!
 
 # How to use
 1. Install Python 3
-2. `pip install -U -r requirements.txt`
+2. `pip3 install -U -r requirements.txt`
 3. Copy config.ini.example to config.ini and adjust it
     * `api_path` = Path to your /admin/api.php of Pi-Hole
     * Tokens: Create an application [here](https://apps.twitter.com/)
