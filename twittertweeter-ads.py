@@ -8,7 +8,7 @@ import urllib
 from urllib.request import urlopen
 
 # Retrieve data and load it into a dictionary
-data = urlopen('http://halilozkal.ddns.net/admin/api.php').read() #bytes
+data = urlopen('http:/path/to/admin/api.php').read() #bytes
 body = data.decode('utf-8')
 data = json.loads(body)
 
