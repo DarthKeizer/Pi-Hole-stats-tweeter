@@ -7,3 +7,10 @@ Send a daily tweet with your Pi-Hole statistics!
 2. ```curl -sSL https://raw.githubusercontent.com/mwoolweaver/Pi-Hole-stats-tweeter/master/install.sh | bash```
 
 the install script will ask if you want to install as a cronjob
+
+
+
+#Credits
+
+original install script was found [here](https://github.com/deathbybandaid/Pi-Hole-stats-tweeter/blob/master/install.sh) 
+
