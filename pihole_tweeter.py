@@ -62,10 +62,10 @@ def get_pihole_data():
 def construct_tweet(data):
     today = datetime.today().strftime("%m.%d.%Y")
     tweet = 'Pi-hole Stats for {date}:\n'.format(date=today)
-    tweet += 'Total Ads Blocked: ' + (data['ads_blocked_today'])
-    tweet += ' (' + (data['ads_percentage_today']) + ' %)\n'
-    tweet += 'Total DNS Queries: ' + (data['dns_queries_today']) + '\n'
-    tweet += 'Domains on Blacklist: ' + (data['domains_being_blocked'])
+    tweet += 'Total Ads Blocked: ' + ['ads_blocked_today']
+    tweet += ' (' + ['ads_percentage_today'] + ' %)\n'
+    tweet += 'Total DNS Queries: ' + ['dns_queries_today'] + '\n'
+    tweet += 'Domains on Blacklist: ' + ['domains_being_blocked']
     return tweet
 
 
