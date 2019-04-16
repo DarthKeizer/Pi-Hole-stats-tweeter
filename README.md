@@ -8,6 +8,7 @@ Send a daily tweet with your Pi-Hole statistics!
 
 the install script will ask if you want to install as a cronjob
 
+upon successful cron completion you will find ~/pihole_tweeter/twitter_bot.txt
 
 
 #Credits
