@@ -28,12 +28,7 @@ if not (api_path, consumer_key, consumer_key, consumer_secret, access_token, acc
     print('2 Please check your config.ini.')
     sys.exit(1)
 
-
-def comma_value(num):
-    """Helper function for thousand separators"""
-    return "{:,}".format(int(num)).replace(',', '.')
-
-
+    
 def get_api():
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
@@ -65,12 +60,12 @@ def get_pihole_data():
 
 
 def construct_tweet(data):
-    today = datetime.today().strftime("%d.%m.%Y")
-    tweet = 'Pi-Hole-Statistik für den {date}:\n'.format(date=today)
-    tweet += 'Blockierte Werbung: ' + str(comma_value(data['ads_blocked_today']))
-    tweet += ' (' + str(round(data['ads_percentage_today'], 2)).replace('.', ',') + ' %)\n'
-    tweet += 'DNS-Abfragen: ' + str(comma_value(data['dns_queries_today'])) + '\n'
-    tweet += 'Domains auf der Blacklist: ' + str(comma_value(data['domains_being_blocked']))
+    today = datetime.today().strftime("%m.%d.%Y")
+    tweet = 'Pi-hole statistics for {date}:\n'.format(date=today)
+    tweet += 'Total Ads Blocked: ' + (data['ads_blocked_today'])
+    tweet += ' (' + (data['ads_percentage_today'] + ' %)\n'
+    tweet += 'Total DNS Queries: ' + (data['dns_queries_today']) + '\n'
+    tweet += 'Domains on Blacklist: ' + (data['domains_being_blocked'])
     return tweet
 
 
