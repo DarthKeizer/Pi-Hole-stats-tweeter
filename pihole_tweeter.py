@@ -68,7 +68,7 @@ def construct_tweet(data):
     today = datetime.today().strftime("%m/%d/%Y")
     tweet = 'Pi-hole statistics for {date}:\n'.format(date=today)
     tweet += 'Ads Blocked: ' + str(comma_value(data['ads_blocked_today']))
-    tweet += ' (' + str(round(data['ads_percentage_today'], 2)).replace('.', ',') + ' %)\n'
+    tweet += ' (' + str(round(data['ads_percentage_today'], 2)).replace('.', '.') + ' %)\n'
     tweet += 'Total DNS Queries: ' + str(comma_value(data['dns_queries_today'])) + '\n'
     tweet += 'Domains on Blocklist: ' + str(comma_value(data['domains_being_blocked'])) + '\n'
     tweet += '#SkyHole: The @The_Pi_Hole on @GoogleCompute.'
