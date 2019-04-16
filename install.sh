@@ -8,7 +8,7 @@ WHATITDOES="This script will install Pi-Hole-stats-tweeter and setup a cronjob t
 then
 echo "Declined $NAMEOFAPP"
 else
-apt-get install -y python3-pip
+sudo apt-get install -y python3-pip
 pip3 install -U -r https://raw.githubusercontent.com/mwoolweaver/Pi-Hole-stats-tweeter/master/requirements.txt
 wget https://raw.githubusercontent.com/mwoolweaver/Pi-Hole-stats-tweeter/master/pihole_tweeter.py -P ~/pihole_tweeter/
 wget https://raw.githubusercontent.com/mwoolweaver/Pi-Hole-stats-tweeter/master/config.ini -P ~/pihole_tweeter/
