@@ -96,7 +96,7 @@ def main():
     except tweepy.error.TweepError:
         print('Status could not be posted.')
         return
-    print('Status posted! https://twitter.com/' + status.author.screen_name + '/status/' + status.id_str)
+    print(status.id_str)
 
 
 if __name__ == '__main__':
