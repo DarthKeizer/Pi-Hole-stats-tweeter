@@ -1,0 +1,1 @@
+55 23 * * * root cd ~/pihole_tweeter/ && python3 pihole_tweeter.py >> ~/pihole_tweeter/twitter_bot.txt
