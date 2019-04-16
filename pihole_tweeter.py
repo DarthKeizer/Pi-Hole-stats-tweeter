@@ -71,7 +71,7 @@ def construct_tweet(data):
     tweet += ' (' + str(round(data['ads_percentage_today'], 2)).replace('.', ',') + ' %)\n'
     tweet += 'Total DNS Queries: ' + str(comma_value(data['dns_queries_today'])) + '\n'
     tweet += 'Domains on Blocklist: ' + str(comma_value(data['domains_being_blocked'])) + '\n'
-    tweet += '#Sky-hole: The @The_Pi_Hole on @GoogleCompute.'
+    tweet += '#SkyHole: The @The_Pi_Hole on @GoogleCompute.'
     return tweet
 
 
