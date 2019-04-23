@@ -80,7 +80,7 @@ def get_pihole_data():
 
     return data
 
-print(platform.system())
+
 
 def construct_tweet(data):
     tweet = '#ComputeHole: The @The_Pi_Hole on @GoogleCompute\n'
