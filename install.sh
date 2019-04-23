@@ -24,6 +24,7 @@ fi }
 { if 
 (whiptail --title "$NAMEOFAPP" --yes-button "Skip" --no-button "Proceed" --yesno "Do you want to setup $NAMEOFAPP as a cronjob?" 8 78) 
 then
+rm ~/pihole_tweeter/config.inie
 echo "did not install cronjob"
 else
 sudo wget http://raw.githubusercontent.com/mwoolweaver/Pi-Hole-stats-tweeter/master/pi-hole-tweeter-cron -P /etc/cron.d/
