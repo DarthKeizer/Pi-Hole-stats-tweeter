@@ -7,3 +7,5 @@ src/
 
 # Config
 config.ini
+
+.DS_Store
