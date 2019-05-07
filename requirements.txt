@@ -1,2 +1,11 @@
 requests
 tweepy
+setuptools
+urllib
+json
+simplejson
+datetime
+uptime
+psutil
+configparser
+hurry.filesize
