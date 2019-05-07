@@ -1,0 +1,1 @@
+55 23 * * * mdwoolweaver cd ~/tweetStats/ && python3 tweetStats.py >> twitter_bot.txt
