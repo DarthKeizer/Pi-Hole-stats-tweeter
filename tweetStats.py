@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+## file originally created by https://github.com/DarthKeizer and can be seen @ https://github.com/DarthKeizer/Pi-Hole-stats-tweeter/blob/master/twittertweeter-ads.py
 import sys
 from configparser import ConfigParser
 from datetime import datetime
-
+import psutil
+import os
+from hurry.filesize import size
+from uptime import uptime
 import tweepy
+import platform
 from requests import get
 
 config = ConfigParser()
@@ -28,10 +33,23 @@ if not (api_path, consumer_key, consumer_key, consumer_secret, access_token, acc
     print('2 Please check your config.ini.')
     sys.exit(1)
 
+def pretty_time_delta(seconds):
+    seconds = int(seconds)
+    days, seconds = divmod(seconds, 86400)
+    hours, seconds = divmod(seconds, 3600)
+    minutes, seconds = divmod(seconds, 60)
+    if days > 0:
+        return '%dd %dh %dm %ds' % (days, hours, minutes, seconds)
+    elif hours > 0:
+        return '%dh %dm %ds' % (hours, minutes, seconds)
+    elif minutes > 0:
+        return '%dm %ds' % (minutes, seconds)
+    else:
+        return '%ds' % (seconds,)
 
 def comma_value(num):
     """Helper function for thousand separators"""
-    return "{:,}".format(int(num)).replace(',', '.')
+    return "{:,}".format(int(num)).replace(',', ',')
 
 
 def get_api():
@@ -64,13 +82,15 @@ def get_pihole_data():
     return data
 
 
+
 def construct_tweet(data):
-    today = datetime.today().strftime("%d.%m.%Y")
-    tweet = 'Pi-Hole-Statistik für den {date}:\n'.format(date=today)
-    tweet += 'Blockierte Werbung: ' + str(comma_value(data['ads_blocked_today']))
-    tweet += ' (' + str(round(data['ads_percentage_today'], 2)).replace('.', ',') + ' %)\n'
-    tweet += 'DNS-Abfragen: ' + str(comma_value(data['dns_queries_today'])) + '\n'
-    tweet += 'Domains auf der Blacklist: ' + str(comma_value(data['domains_being_blocked']))
+    tweet = '#ComputeHole: The @The_Pi_Hole on @GoogleCompute\n'
+    tweet += 'Ads Blocked: ' + str(comma_value(data['ads_blocked_today']))
+    tweet += ' (' + str(round(data['ads_percentage_today'], 2)).replace('.', '.') + '%)\n'
+    tweet += 'Total DNS Queries: ' + str(comma_value(data['dns_queries_today'])) + '\n'
+    tweet += 'Domains on Blocklist: ' + str(comma_value(data['domains_being_blocked'])) + '\n'
+    tweet += 'Uptime: ' + pretty_time_delta(uptime())  + '\n' + 'Load Avg: ' + str(os.getloadavg()) + '\n' + 'Ram Usage: ' + str(psutil.virtual_memory()[2]) +  '% ' + str(size(psutil.virtual_memory()[3])) + '/' + str(size(psutil.virtual_memory()[1])) + '\n'
+    tweet += 'Kernel/OS: ' + str(platform.platform())
     return tweet
 
 
@@ -95,7 +115,7 @@ def main():
     except tweepy.error.TweepError:
         print('Status could not be posted.')
         return
-    print('Status posted! https://twitter.com/' + status.author.screen_name + '/status/' + status.id_str)
+    print(status.id_str)
 
 
 if __name__ == '__main__':
