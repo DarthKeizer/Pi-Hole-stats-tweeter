@@ -92,8 +92,8 @@ def main():
     tweet = construct_tweet(data)
     try:
         status = api.update_status(status=tweet)
-    except tweepy.error.TweepError:
-        print('Status could not be posted.')
+    except tweepy.TweepError as e:
+        print(e.reason)
         return
     print('Status posted! https://twitter.com/' + status.author.screen_name + '/status/' + status.id_str)
 
