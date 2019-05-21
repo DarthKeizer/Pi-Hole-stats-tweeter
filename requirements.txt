@@ -1,2 +1,7 @@
-requests
-tweepy
+hurry.filesize>=0.9
+psutil>=5.6.2
+netifaces>=0.10.9
+datetime>=4.3
+requests>=2.22.0
+emoji>=0.5.2
+tweepy>=3.7.0

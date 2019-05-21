@@ -1,0 +1,8 @@
+linters:
+  flake8:
+    fixer: true
+    python: 3
+  shellcheck:
+    shell: bash
+fixers:
+  enable: true

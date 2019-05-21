@@ -1,0 +1,22 @@
+{
+    "_coments":{
+        "pihole":{
+            "api_path":"http://path/to/---> pi.hole/admin/api.php"
+        },
+        "twitter":{
+            "consumer_key":"Get this from twitter when creating the application",
+            "consumer_secret":"Get this from twitter when creating the application",
+            "access_token":"Get this from twitter when creating the application",
+            "access_token_secret":"Get this from twitter when creating the application"
+        }
+    },
+    "pihole":{
+        "api_path":"http://localhost:8080/admin/api.php"
+    },
+    "twitter":{
+        "consumer_key":"xxxxxxxxxxxx",
+        "consumer_secret":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "access_token":"xxxxxxxxxxxxxxxxxxxxx",
+        "access_token_secret":""
+    }
+}

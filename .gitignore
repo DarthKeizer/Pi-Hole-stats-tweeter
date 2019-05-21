@@ -4,6 +4,9 @@ __pycache__/
 *$py.class
 src/
 .idea/
+.vscode/
 
 # Config
 config.ini
+config.json
+.DS_Store
