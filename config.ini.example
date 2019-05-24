@@ -1,6 +1,0 @@
-[DEFAULT]
-api_path = http://localhost/admin/api.php
-consumer_key = CONSUMERKEY
-consumer_secret = CONSUMERSECRET
-access_token = ACCESS-TOKEN
-access_token_secret = ACCESSTOKENSECRET

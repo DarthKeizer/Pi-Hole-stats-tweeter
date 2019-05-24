@@ -4,19 +4,19 @@
             "api_path":"http://path/to/---> pi.hole/admin/api.php"
         },
         "twitter":{
-            "consumer_key":"Get this from twitter when creating the application",
-            "consumer_secret":"Get this from twitter when creating the application",
-            "access_token":"Get this from twitter when creating the application",
-            "access_token_secret":"Get this from twitter when creating the application"
+            "consumer_key":"Get this from twitter when creating the application as described in the ReadMe",
+            "consumer_secret":"Get this from twitter when creating the application as described in the ReadMe",
+            "access_token":"Get this from twitter when creating the application as described in the ReadMe",
+            "access_token_secret":"Get this from twitter when creating the application as described in the ReadMe"
         }
     },
     "pihole":{
-        "api_path":"http://localhost:8080/admin/api.php"
+        "api_path":"VALUE1"
     },
     "twitter":{
-        "consumer_key":"xxxxxxxxxxxx",
-        "consumer_secret":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-        "access_token":"xxxxxxxxxxxxxxxxxxxxx",
-        "access_token_secret":""
+        "consumer_key":"VALUE2",
+        "consumer_secret":"VALUE3",
+        "access_token":"VALUE4",
+        "access_token_secret":"VALUE5"
     }
 }
