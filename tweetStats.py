@@ -27,7 +27,8 @@ def tweet_it(apiTW):
     th.send_tweets()
 
     stuff = apiTW[0].user_timeline(screen_name='ComputeHole', count = 3)
-    for status in stuff: print(dir(status))
+    for status in stuff: print(dir(status).id_str)
+        
     
     # stuff = api.user_timeline(screen_name = 'danieltosh', count = 100, include_rts = True)
 
