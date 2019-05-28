@@ -26,15 +26,6 @@ def tweet_it(apiTW):
     th = Threader(tweets, api, wait=2, end_string=False)
     th.send_tweets()
 
-    stuff = apiTW[0].user_timeline(screen_name='ComputeHole', count = 3)
-    for status in stuff: print(status)
-        
-    
-    # stuff = api.user_timeline(screen_name = 'danieltosh', count = 100, include_rts = True)
-
-    
-
-
 # Make it Happen!!
 def main():
     d = int(d1)
