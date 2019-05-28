@@ -4,19 +4,23 @@
             "api_path":"http://path/to/---> pi.hole/admin/api.php"
         },
         "twitter":{
-            "consumer_key":"Get this from twitter when creating the application as described in the ReadMe",
-            "consumer_secret":"Get this from twitter when creating the application as described in the ReadMe",
-            "access_token":"Get this from twitter when creating the application as described in the ReadMe",
-            "access_token_secret":"Get this from twitter when creating the application as described in the ReadMe"
+            "consumer_key":"Get this from twitter when creating the application",
+            "consumer_secret":"Get this from twitter when creating the application",
+            "access_token":"Get this from twitter when creating the application",
+            "access_token_secret":"Get this from twitter when creating the application"
         }
     },
     "pihole":{
-        "api_path":"VALUE1"
+        "api_path":"http://pi.hole:8080/admin/api.php"
     },
     "twitter":{
-        "consumer_key":"VALUE2",
-        "consumer_secret":"VALUE3",
-        "access_token":"VALUE4",
-        "access_token_secret":"VALUE5"
+        "consumer_key":"Kmr1P8IRroKZI1To1Z7SVT6N8",
+        "consumer_secret":"cxn2PZXTx0u5uDlWb5JoNSFFR0Jn66phtefFjZI4BGli29AeA5",
+        "access_token":"230488899-lt76jC07shSEMiY9FzzIQHVMy7UooudqzysXfWiO",
+        "access_token_secret":"aV2pw7GjjY708p8czke4oIQkqQmgI1faZ7jMVDuulv2w8"
+    }
+    "facbook":{
+
+        "access_token":"VALUE6",
     }
 }

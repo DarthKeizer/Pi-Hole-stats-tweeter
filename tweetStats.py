@@ -9,11 +9,23 @@ from lib.debug import debug_tweet, d1, s # All the deugging happens here && pars
 def tweet_it(api):
         
     # build tweet
-    tweet = ct.construct_tweet(ct.pi(), ct.si())
-    
+    PHtweet = ct.construct_tweet(ct.pi(), ct.si())[0]
+    SYtweet = ct.construct_tweet(ct.pi(), ct.si())[1]    
     # and send it
     try:
-        status = api[0].update_status(status=tweet)
+        status = api[0].update_status(status=PHtweet)
+    except api[2].TweepError as e: # most of the time you end up here cause your tweet was to long ( tweet > 280 characters)
+        print(e.reason)            #  if this happens regularly you might have to remove some data from the tweet
+        s.switch(1)
+        return
+    print('Tweet tweeted!! --> https://twitter.com/' + status.author.screen_name + '/status/' + status.id_str)
+
+    piStatus = status.id_str
+    me = status.author.screen_name
+    reply_status = "@%s\n %s" % (me, SYtweet)
+
+    try:
+        status = api[0].update_status(status=reply_status, in_reply_to_status=piStatus)
     except api[2].TweepError as e: # most of the time you end up here cause your tweet was to long ( tweet > 280 characters)
         print(e.reason)            #  if this happens regularly you might have to remove some data from the tweet
         s.switch(1)
