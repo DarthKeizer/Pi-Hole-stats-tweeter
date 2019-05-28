@@ -26,7 +26,7 @@ def tweet_it(apiTW):
     th = Threader(tweets, api, wait=2, end_string=False)
     th.send_tweets()
 
-    print(apiTW[0].user_timeline(id = self.client_id, count = 1)[0])
+    print(apiTW[0].user_timeline(id = apiTW[0].client_id, count = 1)[0])
 
     
 
