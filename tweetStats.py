@@ -20,7 +20,7 @@ def tweet_it(api):
         return
     print('Tweet tweeted!! --> https://twitter.com/' + status.author.screen_name + '/status/' + status.id_str)
 
-    piStatus = status.id_str
+    piStatus = int(status.id_str)
     me = status.author.screen_name
     reply_status = "@%s\n %s" % (me, SYtweet)
 
