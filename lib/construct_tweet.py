@@ -6,7 +6,7 @@ from lib.pihole_info import pihole_info as pi # where pihole information is gath
 # Build the tweet
 def construct_tweet(ph, sy):
     
-    PHtweet = '#ComputeHole: @The_Pi_Hole on @GoogleCompute'
+    PHtweet = '#ComputeHole: #PiHole on #EoanErmine'
     PHtweet += '\n🚫🌐: ' + ph[0] # size of block list
     PHtweet += '\n🈵⁉: ' + ph[1] # total querries
     PHtweet += '\n📢🚫: ' + ph[2] # ads blocked
@@ -15,15 +15,16 @@ def construct_tweet(ph, sy):
     PHtweet += '\n🦄🙈: ' + ph[5] # unique clients
     PHtweet += '\n🔐🎚: ' + ph[6] # privacy level
     PHtweet += '\n🚫📝⌛: ' + ph[7] # gravity last updated (printed as your local time)
-    PHtweet += '\n#Pihole_Stats'
+    PHtweet += '\n#PiHole_Stats'
     
-    SYtweet = '#Ubuntu #IoT #GCP #cloud'
+    SYtweet = '#Ubuntu1910 powered by #GCPcompute'
     SYtweet += '\n⚖️x̅: ' + sy[1] # CPU load average
     SYtweet += '\n🐏📈: ' + sy[2] # RAM usage
     SYtweet += '\n🔗📡: ' + sy[3] # network interface names (doesn't include the loopback interface)
     SYtweet += '\n💾📊: ' + sy[4] # disk usage information
     SYtweet += '\n🐧🌽: ' + sy[5] # kernel && OS information
     SYtweet += '\n🖥️👢⏳: ' + sy[0] # time when system booted (printed as your local time)
+    SYtweet += '\n#IoT #cloud '
     # print(tweet) # always print tweet to console so we can see the output locally
     return PHtweet, SYtweet
 
