@@ -22,7 +22,7 @@ def tweet_it(api):
 
     piStatus = status.id_str
     me = status.author.screen_name
-    reply_status = "@%s\n %s" % (me, SYtweet)
+    reply_status = "@%s @The_Pi_Hole @GoogleCompute\n %s" % (me, SYtweet)
 
     try:
         status = api[0].update_status(status=reply_status, in_reply_to_status_id=piStatus)
