@@ -9,7 +9,7 @@ from TwitterAPI import TwitterAPI
 from threader import Threader
 
 # Tweet it!
-def tweet_it(api):
+def tweet_it(apiTW):
         
     # build tweet
     PHtweet = ct.construct_tweet(ct.pi(), ct.si())[0]
@@ -23,8 +23,12 @@ def tweet_it(api):
     api = TwitterAPI(**keys)
 
     tweets = [PHtweet, SYtweet]
-    th = Threader(tweets, api, wait=2)
+    th = Threader(tweets, api, wait=2, end_string=False)
     th.send_tweets()
+
+    print(apiTW[0].user_timeline(id = self.client_id, count = 1)[0])
+
+    
 
 
 # Make it Happen!!
