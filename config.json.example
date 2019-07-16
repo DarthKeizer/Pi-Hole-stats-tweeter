@@ -20,7 +20,6 @@
         "access_token_secret":"VALUE5"
     },
     "facbook":{
-
         "access_token":"VALUE6"
     }
 }
