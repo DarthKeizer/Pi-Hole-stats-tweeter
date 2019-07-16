@@ -13,7 +13,7 @@ def tweet_it(apiTW):
         
     # build tweet
     PHtweet = ct.construct_tweet(ct.pi(), ct.si())[0]
-    SYtweet = ct.construct_tweet(ct.pi(), ct.si())[1]    
+    SYtweet = ct.construct_tweet(ct.pi(), ct.si())[1]
     # and send it
 
     keys = dict(consumer_key=cfgt()[0],

@@ -11,13 +11,13 @@
         }
     },
     "pihole":{
-        "api_path":"http://pi.hole:8080/admin/api.php"
+        "api_path":"VALUE1"
     },
     "twitter":{
-        "consumer_key":"Kmr1P8IRroKZI1To1Z7SVT6N8",
-        "consumer_secret":"cxn2PZXTx0u5uDlWb5JoNSFFR0Jn66phtefFjZI4BGli29AeA5",
-        "access_token":"230488899-lt76jC07shSEMiY9FzzIQHVMy7UooudqzysXfWiO",
-        "access_token_secret":"aV2pw7GjjY708p8czke4oIQkqQmgI1faZ7jMVDuulv2w8"
+        "consumer_key":"VALUE2",
+        "consumer_secret":"VALUE3",
+        "access_token":"VALUE4",
+        "access_token_secret":"VALUE5"
     }
     "facbook":{
 
