@@ -18,7 +18,7 @@
         "consumer_secret":"VALUE3",
         "access_token":"VALUE4",
         "access_token_secret":"VALUE5"
-    }
+    },
     "facbook":{
 
         "access_token":"VALUE6",
