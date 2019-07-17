@@ -56,6 +56,9 @@ def debug_tweet(ph, sy):
     tweet += '\n⚖️x̅: ' + sy[1]
     tweet += '\n🐏📈: ' + sy[2]
     tweet += '\n🔗📡: ' + sy[3]
+    tweet += '\n🎯⌛: ' + sy[8] # Ping via speedtest-cli
+    tweet += '\n⬆️⚖️: ' + sy[6] # Upload speed via speedtest-cli
+    tweet += '\n⬇️⚖️: ' + sy[7] # Download speed via speedtest-cli 
     tweet += '\n💾📊: ' + sy[4]
     tweet += '\n🐧🌽: ' + sy[5]
     tweet += '\n🖥️👢⏳: ' + sy[0]

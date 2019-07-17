@@ -21,6 +21,9 @@ def construct_tweet(ph, sy):
     SYtweet += '\n⚖️x̅: ' + sy[1] # CPU load average
     SYtweet += '\n🐏📈: ' + sy[2] # RAM usage
     SYtweet += '\n🔗📡: ' + sy[3] # network interface names (doesn't include the loopback interface)
+    SYtweet += '\n🎯⌛: ' + sy[8] # Ping via speedtest-cli
+    SYtweet += '\n⬆️⚖️: ' + sy[6] # Upload speed via speedtest-cli
+    SYtweet += '\n⬇️⚖️: ' + sy[7] # Download speed via speedtest-cli 
     SYtweet += '\n💾📊: ' + sy[4] # disk usage information
     SYtweet += '\n🐧🌽: ' + sy[5] # kernel && OS information
     SYtweet += '\n🖥️👢⏳: ' + sy[0] # time when system booted (printed as your local time)

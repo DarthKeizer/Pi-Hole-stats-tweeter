@@ -12,8 +12,10 @@ def sys_info():
     from psutil import getloadavg as gl # how we get cpu load average
     import netifaces as ni  # used to retreive network interfaces
     from datetime import datetime as dt # used to calculate UTC from epoch
+    from lib.speed_test import us, ds, pg
+ 
+    
 
-    # setup system info variables
     regex = r"'lo'(?:,\s*)?|[][')(]|(?:,\s*)?'lo'" # modified suggestion from https://stackoverflow.com/questions/56153426/regex-for-replacing-special-pa>
     total, used, free = du("/") # Get disk stats - we only use 2 of these but the function requires all 3 (total, used, free)
     free = None
@@ -28,7 +30,17 @@ def sys_info():
     totalGB = sz(total) # total disk space in GB
     usedGB = sz(used) # total disk space used in GB
     percentHDD = str(percentHDD) # percentage of disk space used
+
+    uls = round(us, 2)
+    dls = round(ds, 2)
+    pings = round(pg, 2)
+
+    ul = str(uls) + " Mbps"
+    dl = str(dls) + " Mbps"
+    ping = str(pings) + " ms"
     
+    print(ul, dl, ping)
+
     # variables to  be passed
     sysUP = dt.utcfromtimestamp(bt()).strftime("%Y-%m-%d %H:%M") # sys_info[0] - uptime
     cpuLoadAvg = re(regex, '', cpuLoadAvg) # sys_info[1] - cpu load average
@@ -38,4 +50,4 @@ def sys_info():
     kernelOS = pl() # sys_info[5] - Kernel version && OS version
 
     # return as tuple to ensure data integrity
-    return (sysUP, cpuLoadAvg, memStats, netfaces, hddStats, kernelOS, free)
+    return (sysUP, cpuLoadAvg, memStats, netfaces, hddStats, kernelOS, ul, dl, ping)
