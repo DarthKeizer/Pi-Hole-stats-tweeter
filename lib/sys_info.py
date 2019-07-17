@@ -30,16 +30,9 @@ def sys_info():
     totalGB = sz(total) # total disk space in GB
     usedGB = sz(used) # total disk space used in GB
     percentHDD = str(percentHDD) # percentage of disk space used
-
     uls = round(us, 2)
     dls = round(ds, 2)
     pings = round(pg, 2)
-
-    ul = str(uls) + " Mbps"
-    dl = str(dls) + " Mbps"
-    ping = str(pings) + " ms"
-    
-    print(ul, dl, ping)
 
     # variables to  be passed
     sysUP = dt.utcfromtimestamp(bt()).strftime("%Y-%m-%d %H:%M") # sys_info[0] - uptime
@@ -48,6 +41,9 @@ def sys_info():
     netfaces = re(regex, '', netfaces) # sys_info[3] - Network interface not including the loopback interface
     hddStats = usedGB + '/' + totalGB + '|' + percentHDD + '%' # sys_info[4] - All hdd stats in 1 variable
     kernelOS = pl() # sys_info[5] - Kernel version && OS version
+    ul = str(uls) + " Mbps"
+    dl = str(dls) + " Mbps"
+    ping = str(pings) + " ms"
 
     # return as tuple to ensure data integrity
     return (sysUP, cpuLoadAvg, memStats, netfaces, hddStats, kernelOS, ul, dl, ping)
