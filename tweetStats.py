@@ -14,6 +14,7 @@ def tweet_it(apiTW):
     # build tweet
     PHtweet = ct.construct_tweet(ct.pi(), ct.si())[0]
     SYtweet = ct.construct_tweet(ct.pi(), ct.si())[1]
+    Nettweet = ct.construct_tweet(ct.pi(), ct.si())[2]
     # and send it
 
     keys = dict(consumer_key=cfgt()[0],
@@ -22,7 +23,7 @@ def tweet_it(apiTW):
             access_token_secret=cfgt()[3])
     api = TwitterAPI(**keys)
 
-    tweets = [PHtweet, SYtweet]
+    tweets = [PHtweet, SYtweet, Nettweet]
     th = Threader(tweets, api, wait=2, end_string=False)
     th.send_tweets()
 

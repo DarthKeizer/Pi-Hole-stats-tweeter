@@ -50,8 +50,9 @@ def debug_tweet():
     # build tweet
     PHtweet = ct.construct_tweet(ct.pi(), ct.si())[0]
     SYtweet = ct.construct_tweet(ct.pi(), ct.si())[1]
+    Nettweet = ct.construct_tweet(ct.pi(), ct.si())[2]
 
-    tweet = PHtweet + SYtweet
+    tweet = PHtweet + SYtweet + Nettweet
     
     # These variables were used during development 
     # ne =28
@@ -86,4 +87,8 @@ def debug_tweet():
     SYnum_other = sum(0 if char in ignored_chars else 1 for char in SYtweet)
     totalS = (num_emoji * 2 + SYnum_other)
     print(str(num_emoji) + '(<- individual emjoi * 2) + ' + str(SYnum_other) + '(<- # of characters that aren\'t emoji\'s) = ' +  str(totalS))
+
+    Netnum_other = sum(0 if char in ignored_chars else 1 for char in Nettweet)
+    totalS = (num_emoji * 2 + Netnum_other)
+    print(str(num_emoji) + '(<- individual emjoi * 2) + ' + str(Netnum_other) + '(<- # of characters that aren\'t emoji\'s) = ' +  str(totalS))
     return

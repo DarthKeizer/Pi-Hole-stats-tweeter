@@ -12,7 +12,7 @@ def sys_info():
     from psutil import getloadavg as gl # how we get cpu load average
     import netifaces as ni  # used to retreive network interfaces
     from datetime import datetime as dt # used to calculate UTC from epoch
-    from lib.speed_test import us, ds, pg
+    from lib.speed_test import us, ds, pg, isp, share, dlByte, ulByte
  
     
 
@@ -33,6 +33,8 @@ def sys_info():
     uls = round(us, 2)
     dls = round(ds, 2)
     pings = round(pg, 2)
+    dlMB = round(dlByte, 2)
+    ulMB = round(ulByte, 2)
 
     # variables to  be passed
     sysUP = dt.utcfromtimestamp(bt()).strftime("%Y-%m-%d %H:%M") # sys_info[0] - uptime
@@ -44,6 +46,8 @@ def sys_info():
     ul = str(uls) + " Mbps"
     dl = str(dls) + " Mbps"
     ping = str(pings) + " ms"
+    ulMBs = str(ulMB) + " MB"
+    dlMBs = str(dlMB) + " MB"
 
     # return as tuple to ensure data integrity
-    return (sysUP, cpuLoadAvg, memStats, netfaces, hddStats, kernelOS, ul, dl, ping)
+    return (sysUP, cpuLoadAvg, memStats, netfaces, hddStats, kernelOS, ul, dl, ping, isp, share, dlMBs, ulMBs)

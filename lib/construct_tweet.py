@@ -17,17 +17,23 @@ def construct_tweet(ph, sy):
     PHtweet += '\nGravity Last Updated: ' + ph[7] # gravity last updated (printed as your local time)
     PHtweet += '\n#Python'
     
-    SYtweet = '\nCPU Laod AVG: ' + sy[1] # CPU load average
+    SYtweet = '#SystemStats'
+    SYtweet += '\nCPU Laod AVG: ' + sy[1] # CPU load average
     SYtweet += '\nRam Usage: ' + sy[2] # RAM usage
     SYtweet += '\nDisk Usage: ' + sy[4] # disk usage information
     SYtweet += '\nKernel && OS: ' + sy[5] # kernel && OS information
-    SYtweet += '\nNetwork Interfaces: ' + sy[3] # network interface names (doesn't include the loopback interface)
-    SYtweet += '\nPing: ' + sy[8] # Ping via speedtest-cli
-    SYtweet += '\nDownload Speed: ' + sy[6] # Upload speed via speedtest-cli
-    SYtweet += '\nUpload Speed: ' + sy[7] # Download speed via speedtest-cli
     SYtweet += '\nBoot Time: ' + sy[0] # time when system booted (printed as your local time)
-    SYtweet += '\n#AdBlocker'
+    SYtweet += '\n#Python'
+
+    Nettweet = '#NetStats'
+    Nettweet += '\nNetwork Interfaces: ' + sy[3] # network interface names (doesn't include the loopback interface)
+    Nettweet += '\nPing: ' + sy[8] # Ping via speedtest-cli
+    Nettweet += '\nDown/Up Speed: ' + sy[6] + '/' + sy[7] # Upload speed via speedtest-cli
+    Nettweet += '\nData Used (dl/ul): ' + sy[11] + '/' + sy[12]
+    Nettweet += '\nISP: ' + sy[9]
+    Nettweet += '\nShare: ' + sy[10]
+    Nettweet += '\n#Speedtest'
     # print(tweet) # always print tweet to console so we can see the output locally
-    return PHtweet, SYtweet
+    return PHtweet, SYtweet, Nettweet
 
 
