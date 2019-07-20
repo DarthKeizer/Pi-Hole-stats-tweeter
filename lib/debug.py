@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from lib.sys_info import sys_info as si # where system information is gathered
 from lib.pihole_info import pihole_info as pi # where pihole information is gathered
+import lib.construct_tweet as ct # where the tweet is put together
 import lib.get_config as apiC # where all the config data lives
 from lib.get_api import get_api as apiT # where we interact with the Twitter API
 from emoji import UNICODE_EMOJI # where we get our emoji dictionary from
@@ -27,41 +28,30 @@ class debugSwitch:
         return getattr(self, 'case_' + str(dbm), lambda: parser.print_help())()
     # Where the switch goes
     def case_1(self): # Print test tweet with real values
-        return debug_tweet(pi(), si())
+        return debug_tweet()
     def case_3(self): # Check Twitter login
         return apiT(apiC.get_cfgt())
     def case_4(self): # Print Test Tweet && Verify Twitter Login
-        return debug_tweet(pi(), si()), apiT(apiC.get_cfgt())
+        return debug_tweet(), apiT(apiC.get_cfgt())
     def case_5(self): # Check pi-hole api reachability
         return print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
     def case_6(self): # Print Test Tweet && Check pi-hole api reachability
-        return debug_tweet(pi(), si()), print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+        return debug_tweet(), print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
     def case_8(self): # Check Twitter login && Check pi-hole api reachability
         return apiT(apiC.get_cfgt()), print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
     def case_9(self): # Print All The Above Debug Options
-        return debug_tweet(pi(), si()), apiT(apiC.get_cfgt()), print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+        return debug_tweet(), apiT(apiC.get_cfgt()), print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
 
 s = debugSwitch()
 
 # prints a test tweet and most (if not all) information used by this program
-def debug_tweet(ph, sy):
-    tweet = '🚫🌐: ' + ph[0]
-    tweet += '\n🈵⁉: ' + ph[1]
-    tweet += '\n📢🚫: ' + ph[2]
-    tweet += '\n⁉⏭: ' + ph[3]
-    tweet += '\n⁉💾: ' + ph[4]
-    tweet += '\n🦄🙈: ' + ph[5]
-    tweet += '\n🔐🎚: ' + ph[6]
-    tweet += '\n🚫📝⌛: ' + ph[7]
-    tweet += '\n⚖️x̅: ' + sy[1]
-    tweet += '\n🐏📈: ' + sy[2]
-    tweet += '\n🔗📡: ' + sy[3]
-    tweet += '\n🎯⌛: ' + sy[8] # Ping via speedtest-cli
-    tweet += '\n⬆️⚖️: ' + sy[6] # Upload speed via speedtest-cli
-    tweet += '\n⬇️⚖️: ' + sy[7] # Download speed via speedtest-cli 
-    tweet += '\n💾📊: ' + sy[4]
-    tweet += '\n🐧🌽: ' + sy[5]
-    tweet += '\n🖥️👢⏳: ' + sy[0]
+def debug_tweet():
+    
+    # build tweet
+    PHtweet = ct.construct_tweet(ct.pi(), ct.si())[0]
+    SYtweet = ct.construct_tweet(ct.pi(), ct.si())[1]
+
+    tweet = PHtweet + SYtweet
     
     # These variables were used during development 
     # ne =28
@@ -77,9 +67,9 @@ def debug_tweet(ph, sy):
     print('\n Pihole Address')
     print(apiC.get_cfgp()[1])
     print('\n Pihole Stats')
-    print(ph)
+    print(ct.pi())
     print('\n System Stats')
-    print(sy)
+    print(ct.si())
     print('\n The tweet that was created.')
     print(tweet)
     print('\n Number of characters in tweet +/- 1 or 2') # will try and nail this down to a more accurate number
@@ -88,4 +78,12 @@ def debug_tweet(ph, sy):
     num_other = sum(0 if char in ignored_chars else 1 for char in tweet)
     totalS = (num_emoji * 2 + num_other)
     print(str(num_emoji) + '(<- individual emjoi * 2) + ' + str(num_other) + '(<- # of characters that aren\'t emoji\'s) = ' +  str(totalS))
+
+    PHnum_other = sum(0 if char in ignored_chars else 1 for char in PHtweet)
+    totalS = (num_emoji * 2 + PHnum_other)
+    print(str(num_emoji) + '(<- individual emjoi * 2) + ' + str(PHnum_other) + '(<- # of characters that aren\'t emoji\'s) = ' +  str(totalS))
+
+    SYnum_other = sum(0 if char in ignored_chars else 1 for char in SYtweet)
+    totalS = (num_emoji * 2 + SYnum_other)
+    print(str(num_emoji) + '(<- individual emjoi * 2) + ' + str(SYnum_other) + '(<- # of characters that aren\'t emoji\'s) = ' +  str(totalS))
     return
