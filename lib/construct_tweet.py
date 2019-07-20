@@ -6,7 +6,7 @@ from lib.pihole_info import pihole_info as pi # where pihole information is gath
 # Build the tweet
 def construct_tweet(ph, sy):
     
-    PHtweet = '#PiHole'
+    PHtweet = '#PiHoleStats'
     PHtweet += '\nBlocklist Size: ' + ph[0] # size of block list
     PHtweet += '\nTotal Querries: ' + ph[1] # total querries
     PHtweet += '\nQuerriess Blocked: ' + ph[2] # ads blocked
@@ -15,10 +15,9 @@ def construct_tweet(ph, sy):
     PHtweet += '\nUnique Clients: ' + ph[5] # unique clients
     PHtweet += '\nPrivacy Level: ' + ph[6] # privacy level
     PHtweet += '\nGravity Last Updated: ' + ph[7] # gravity last updated (printed as your local time)
-    PHtweet += '\n#PiHoleStats'
+    PHtweet += '\n#Python'
     
-    SYtweet = '#Python'
-    SYtweet += '\nCPU Laod AVG: ' + sy[1] # CPU load average
+    SYtweet = '\nCPU Laod AVG: ' + sy[1] # CPU load average
     SYtweet += '\nRam Usage: ' + sy[2] # RAM usage
     SYtweet += '\nDisk Usage: ' + sy[4] # disk usage information
     SYtweet += '\nKernel && OS: ' + sy[5] # kernel && OS information
@@ -26,8 +25,9 @@ def construct_tweet(ph, sy):
     SYtweet += '\nPing: ' + sy[8] # Ping via speedtest-cli
     SYtweet += '\nDownload Speed: ' + sy[6] # Upload speed via speedtest-cli
     SYtweet += '\nUpload Speed: ' + sy[7] # Download speed via speedtest-cli
-    SYtweet += '\nSystem Boot Time: ' + sy[0] # time when system booted (printed as your local time)
+    SYtweet += '\nBoot Time: ' + sy[0] # time when system booted (printed as your local time)
     SYtweet += '\n#AdBlocker'
     # print(tweet) # always print tweet to console so we can see the output locally
     return PHtweet, SYtweet
+
 
