@@ -5,3 +5,5 @@ datetime>=4.3
 requests>=2.22.0
 emoji>=0.5.2
 tweepy>=3.7.0
+distro>=1.4.0
+speedtest-cli>=2.1.1
