@@ -23,7 +23,7 @@ def construct_tweet(ph, sy):
     SYtweet += '\nDisk Usage: ' + sy[4] # disk usage information
     SYtweet += '\nKernel && OS: ' + sy[5] # kernel && OS information
     SYtweet += '\nBoot Time: ' + sy[0] # time when system booted (printed as your local time)
-    SYtweet += '\n#Python'
+    SYtweet += '\n#' + sy[13]
 
     Nettweet = '#NetStats'
     Nettweet += '\nNetwork Interfaces: ' + sy[3] # network interface names (doesn't include the loopback interface)

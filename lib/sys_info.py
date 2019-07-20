@@ -3,7 +3,9 @@
 # retreive data for system information
 
 def sys_info():
+    import platform
     from platform import platform as pl  # used to retreive OS && kernel version
+    from distro import name as OSname # used to retreive kernel version
     from re import sub as re # used to apply regex
     from shutil import disk_usage as du # used to get hard drive info
     from hurry.filesize import size as sz # converts bytes to GB
@@ -12,7 +14,7 @@ def sys_info():
     from psutil import getloadavg as gl # how we get cpu load average
     import netifaces as ni  # used to retreive network interfaces
     from datetime import datetime as dt # used to calculate UTC from epoch
-    from lib.speed_test import us, ds, pg, isp, share, dlByte, ulByte
+    from lib.speed_test import us, ds, pg, isp, share, dlByte, ulByte, data
  
     
 
@@ -43,6 +45,8 @@ def sys_info():
     netfaces = re(regex, '', netfaces) # sys_info[3] - Network interface not including the loopback interface
     hddStats = usedGB + '/' + totalGB + '|' + percentHDD + '%' # sys_info[4] - All hdd stats in 1 variable
     kernelOS = pl() # sys_info[5] - Kernel version && OS version
+    OSN = OSname(pretty=False)
+    print(OSN)
     ul = str(uls) + " Mbps"
     dl = str(dls) + " Mbps"
     ping = str(pings) + " ms"
@@ -50,4 +54,4 @@ def sys_info():
     dlMBs = str(dlMB) + " MB"
 
     # return as tuple to ensure data integrity
-    return (sysUP, cpuLoadAvg, memStats, netfaces, hddStats, kernelOS, ul, dl, ping, isp, share, dlMBs, ulMBs)
+    return (sysUP, cpuLoadAvg, memStats, netfaces, hddStats, kernelOS, ul, dl, ping, isp, share, dlMBs, ulMBs, OSN)

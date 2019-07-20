@@ -7,18 +7,9 @@ data = json.loads(jstring)
 client = data["client"]
 server = data["server"]
 
-print(data)
-print("\nclient\n")
-print(client)
-print("\nISP\n")
-print(client["isp"])
-print(data["share"])
-
 ulByte = data["bytes_sent"]/1024/1024
-print(ulByte)
 
 dlByte = data["bytes_received"]/1024/1024
-print(str(dlByte))
 
 
 us = data["upload"]/1000000

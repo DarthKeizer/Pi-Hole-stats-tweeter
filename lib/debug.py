@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from lib.sys_info import sys_info as si # where system information is gathered
 from lib.pihole_info import pihole_info as pi # where pihole information is gathered
+from lib.speed_test import us, ds, pg, isp, share, dlByte, ulByte, data
 import lib.construct_tweet as ct # where the tweet is put together
 import lib.get_config as apiC # where all the config data lives
 from lib.get_api import get_api as apiT # where we interact with the Twitter API
@@ -52,7 +53,7 @@ def debug_tweet():
     SYtweet = ct.construct_tweet(ct.pi(), ct.si())[1]
     Nettweet = ct.construct_tweet(ct.pi(), ct.si())[2]
 
-    tweet = PHtweet + SYtweet + Nettweet
+    tweet = '\n\n Tweet 1\n' + PHtweet + '\n\n Tweet 2\n' + SYtweet + '\n\n Tweet 3\n' + Nettweet + '\n'
     
     # These variables were used during development 
     # ne =28
@@ -71,14 +72,13 @@ def debug_tweet():
     print(ct.pi())
     print('\n System Stats')
     print(ct.si())
-    print('\n The tweet that was created.')
+    print('\n SpeedTest Info')
+    print(data)
+    print('\n The tweets that where created.')
     print(tweet)
     print('\n Number of characters in tweet +/- 1 or 2') # will try and nail this down to a more accurate number
     num_emoji = (sum(tweet.count(emoji) for emoji in UNICODE_EMOJI)) # accurately count and track emoji
     ignored_chars = UNICODE_EMOJI.copy() # thanks to https://stackoverflow.com/q/56214183/11456464
-    num_other = sum(0 if char in ignored_chars else 1 for char in tweet)
-    totalS = (num_emoji * 2 + num_other)
-    print(str(num_emoji) + '(<- individual emjoi * 2) + ' + str(num_other) + '(<- # of characters that aren\'t emoji\'s) = ' +  str(totalS))
 
     PHnum_other = sum(0 if char in ignored_chars else 1 for char in PHtweet)
     totalS = (num_emoji * 2 + PHnum_other)
