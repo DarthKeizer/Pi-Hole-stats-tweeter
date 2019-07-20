@@ -53,4 +53,4 @@ def sys_info():
     dlMBs = str(dlMB) + " MB"
 
     # return as tuple to ensure data integrity
-    return (sysUP, cpuLoadAvg, memStats, netfaces, hddStats, kernelOS, ul, dl, ping, isp, share, dlMBs, ulMBs, OSN)
+    return (sysUP, cpuLoadAvg, memStats, netfaces, hddStats, kernelOS, ul, dl, ping, isp, share, dlMBs, ulMBs, OSN, free)
