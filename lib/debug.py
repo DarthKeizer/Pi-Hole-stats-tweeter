@@ -60,7 +60,7 @@ def debug_tweet():
 
     print("\nCheck Twitter Login")
     from lib.get_api import get_api as apiT # where we interact with the Twitter API
-    print(apiT(apiC.get_cfgt()))
+    print(apiT(apiC.get_cfgt())[3])
     
     print('\n Pihole Address')
     print(apiC.get_cfgp()[1])

@@ -9,7 +9,6 @@ def get_api(keys):
     # verify twitter credentials
     try:
         login = ('Logged in as @' + api.me().screen_name)
-        print(login)
     except keys[4].error.TweepError as e:
         print(e.reason + 'This your down fall')
         return
