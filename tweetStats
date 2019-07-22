@@ -1,1 +1,1 @@
-55 23 * * * root cd ~/tweetStat/ && python3 tweetStat.sh >> ~/tweetStat/twitter_bot.txt
+55 23 * * * root cd ~/tweetStats/ && python3 tweetStats.sh >> ~/tweetStats/twitter_bot.txt
