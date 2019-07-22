@@ -42,5 +42,3 @@ def construct_tweet(ph, sy):
     Nettweet += '\n#Speedtest'
     # print(tweet) # always print tweet to console so we can see the output locally
     return PHtweet, SYtweet, Nettweet
-
-
