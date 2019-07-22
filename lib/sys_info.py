@@ -37,7 +37,6 @@ def sys_info():
     pings = round(pg, 2)
     dlMB = round(dlByte, 2)
     ulMB = round(ulByte, 2)
-
     ip = '.'.join(ip.split('.')[:2]) + '.xx.xx'
 
     # variables to  be passed

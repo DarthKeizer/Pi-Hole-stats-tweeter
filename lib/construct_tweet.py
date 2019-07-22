@@ -6,6 +6,7 @@ from lib.pihole_info import pihole_info as pi # where pihole information is gath
 # Build the tweet
 def construct_tweet(ph, sy):
     
+    # First Tweet
     PHtweet = '#PiHoleStats'
     PHtweet += '\nBlocklist Size: ' + ph[0] # size of block list
     PHtweet += '\nTotal Querries: ' + ph[1] # total querries
@@ -17,6 +18,7 @@ def construct_tweet(ph, sy):
     PHtweet += '\nGravity Last Updated: ' + ph[7] # gravity last updated (printed as your local time)
     PHtweet += '\n#Python'
     
+    # Second Tweet
     SYtweet = '#SystemStats'
     SYtweet += '\nCPU Laod AVG: ' + sy[1] # CPU load average
     SYtweet += '\nRam Usage: ' + sy[2] # RAM usage
@@ -25,6 +27,7 @@ def construct_tweet(ph, sy):
     SYtweet += '\nBoot Time: ' + sy[0] # time when system booted (printed as your local time)
     SYtweet += '\n#' + sy[13]
 
+    # Third Tweet
     Nettweet = '#NetStats'
     Nettweet += '\nNetwork Interfaces: ' + sy[3] # network interface names (doesn't include the loopback interface)
     Nettweet += '\nPing: ' + sy[8] # Ping via speedtest-cli

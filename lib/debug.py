@@ -54,15 +54,6 @@ def debug_tweet():
     Nettweet = ct.construct_tweet(ct.pi(), ct.si())[2]
 
     tweet = '\n\n Tweet 1\n' + PHtweet + '\n\n Tweet 2\n' + SYtweet + '\n\n Tweet 3\n' + Nettweet + '\n'
-    
-    # These variables were used during development 
-    # ne =28
-    # sc = 43
-    # tweets ="🚫🌐🈵⁉📢🚫⁉⏭⁉💾🦄🙈🔐🎚🚫📝⌛️🐏📈🔗📡💾📊🐧🌽️👢⏳"
-    # x̅ is not an emoji so count it as a regular character
-    # tweetS = 'x̅' + ph[0] + ph[1] + ph[2] + ph[3] + ph[4] + ph[5] + ph[6] + ph[7] + sy[0] + sy[1] + sy[2] + sy[3] + sy[4] + sy[5]
-    
-    # ^^^^^ These variables were used during development  ^^^^^^
 
     print('\n Twitter Keys')
     print(apiC.get_cfgt()[5])
