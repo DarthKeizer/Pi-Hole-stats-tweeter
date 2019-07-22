@@ -10,7 +10,9 @@ from threader import Threader
 
 # Tweet it!
 def tweet_it(apiTW):
-        
+    
+    print(ga(cfgt())[3])
+
     # build tweet
     PHtweet = ct.construct_tweet(ct.pi(), ct.si())[0]
     SYtweet = ct.construct_tweet(ct.pi(), ct.si())[1]
