@@ -1,0 +1,11 @@
+hurry.filesize>=0.9
+psutil>=5.6.2
+netifaces>=0.10.9
+datetime>=4.3
+requests>=2.22.0
+emoji>=0.5.2
+tweepy>=3.7.0
+distro>=1.4.0
+speedtest-cli>=2.1.1
+threader>=0.1.1
+TwitterAPI>=2.5.9

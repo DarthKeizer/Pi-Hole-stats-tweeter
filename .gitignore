@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files / pip / IDE
+__pycache__/
+*.py[cod]
+*$py.class
+src/
+.idea/
+.vscode/
+
+# Config
+config.ini
+config.json
+.DS_Store

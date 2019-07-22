@@ -1,18 +1,70 @@
-# Pi Hole stats tweeter
-I want to send a a daily tweet with the results of what my Pi-Hole blocked. Here is the code, run in Python3.
+# tweetStats
 
-# How to use
-Install following python dependencies with: sudo pip install tweepy datetime json urllib
+Send a daily tweet with your Pi-Hole statistics and other system information!
 
-Download python file and replace it with your own account data and link to your own path/to/admin/api.php
+## How to use
 
-# Cronjob
-This will tweet your stats at 23:59 everyday
+1. `git clone https://github.com/mwoolweaver/tweetStats.git`
+2. Install Python 3
+3. `pip3 install -U -r requirements.txt`
+4. Copy `config.json.example` to `config.json` and adjust it `cp config.json.example config.json`
+   - `api_path` = Path to your `/admin/api.php` of Pi-Hole
+   - Tokens: Create an application [here](https://apps.twitter.com/)
+5. Run it! `python3 tweetStats.py` `python3 tweetStats.py -h` -> for help
+6. ???
+7. Profit
 
-59 23 * * * sudo python3 /home/pi/Desktop/twittertweeter.py >/dev/null 2>&1
+## cmd line args for testing
 
-# Twitter acces keys and tokens
-On their own website it is quite clearly explained: https://dev.twitter.com/oauth/overview/application-owner-access-tokens
+  *  -db will print the tweet to be sent and all other variables that are used in the proccess.
 
-# Reddit
-https://www.reddit.com/r/pihole/comments/67umvj/need_help_with_doing_a_daily_pihole_tweet/
+  *  -dbl will test your twitter credentials to test a successful login.
+
+  *  -dbp will make sure the pi-hole api can be reached. 
+
+## Cronjob
+
+This will tweet your stats at 23:55 everyday and redirects output to ~/tweetStats/tweetStats.txt so you know that it actually worked.
+
+```
+55 23 * * * root cd ~/tweetStats/ && python3 tweetStats.sh >> ~/tweetStat/twitter_bot.txt
+```
+
+# How it looks
+
+```
+Tweet 1
+#PiHoleStats
+Blocklist Size: 761,313
+Total Queries: 25,137
+Queries Blocked: 0|0%
+Queries Forwarded: 509
+Queries Cached: 24,628
+Unique Clients: 1
+Privacy Level: 2
+Gravity Last Updated: 2019-07-16 18:03
+#Python
+
+ Tweet 2
+#SystemStats
+CPU Load AVG: 0.08, 0.02, 0.01
+Ram Usage: 483M/1G|39.3%
+Disk Usage: 9G/28G|32.14%
+Network Interfaces: ens4, tun0, tun1
+Kernel && OS: Linux-5.0.0-1010-gcp-x86_64-with-Ubuntu-19.10-eoan
+Boot Time: 2019-07-16 18:12
+#Ubuntu
+
+ Tweet 3
+#NetStats
+Ping: 38.68 ms
+Down/Up Speed: 994.81 Mbps/409.19 Mbps
+Data Used (dl/ul): 390.41 MB/144.5 MB
+IP: 35.222.xx.xx
+ISP: Google Cloud
+Region: Virginia
+Continent: North America
+Share: http://www.speedtest.net/result/8438272507.png
+#Speedtest
+```
+![example](.github/tweetStats.gif)

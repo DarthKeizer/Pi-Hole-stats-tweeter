@@ -1,0 +1,28 @@
+{
+    "_coments":{
+        "pihole":{
+            "api_path":"http://path/to/---> pi.hole/admin/api.php"
+        },
+        "twitter":{
+            "consumer_key":"Get this from twitter when creating the application",
+            "consumer_secret":"Get this from twitter when creating the application",
+            "access_token":"Get this from twitter when creating the application",
+            "access_token_secret":"Get this from twitter when creating the application"
+        },
+        "ipstack":{
+            "access_key":" get this from https://ipstack.com/signup/free"
+        }
+    },
+    "pihole":{
+        "api_path":"VALUE1"
+    },
+    "twitter":{
+        "consumer_key":"VALUE2",
+        "consumer_secret":"VALUE3",
+        "access_token":"VALUE4",
+        "access_token_secret":"VALUE5"
+    },
+    "ipstack":{
+        "access_key":"VALUE6"
+    }
+}
