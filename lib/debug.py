@@ -22,8 +22,7 @@ d1 = db + dbl + dbp # add our args together for better handling of each case
 class debugSwitch:
     
     # Print number used to determine debug output
-    print("Debug Variable")
-    print(d1)
+    print("Debug Variable = " + str(d1) + "\ntweetStats.py -h for more info")
 
     # Where the switching happens    
     def switch(self, dbm):
@@ -33,10 +32,12 @@ class debugSwitch:
         return debug_tweet()
     def case_3(self): # Check Twitter login
         from lib.get_api import get_api as apiT # where we interact with the Twitter API
-        return apiT(apiC.get_cfgt())
+        print(apiT(apiC.get_cfgt())[3])
+        return
     def case_4(self): # Print Test Tweet && Verify Twitter Login
         from lib.get_api import get_api as apiT # where we interact with the Twitter API
-        return debug_tweet(), apiT(apiC.get_cfgt())
+        print(apiT(apiC.get_cfgt())[3])
+        return debug_tweet()
     def case_5(self): # Check pi-hole api reachability
         from lib.pihole_info import pihole_info as pi # where pihole information is gathered
         return print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
@@ -46,7 +47,9 @@ class debugSwitch:
     def case_8(self): # Check Twitter login && Check pi-hole api reachability
         from lib.get_api import get_api as apiT # where we interact with the Twitter API
         from lib.pihole_info import pihole_info as pi # where pihole information is gathered
-        return apiT(apiC.get_cfgt()), print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+        print(apiT(apiC.get_cfgt())[3])
+        print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+        return
     def case_9(self): # Print All The Above Debug Options
         return debug_tweet()
 
