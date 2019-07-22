@@ -30,7 +30,6 @@ def tweet_it(apiTW):
 # Make it Happen!!
 def main():
     d = int(d1)
-    print(d)
     if d != 0: # checks for any passed args
         s.switch(d) 
     else: # if no args send it!!

@@ -24,7 +24,11 @@ dbp = args.dbp
 d1 = db + dbl + dbp # add our args together for better handling of each case
 
 class debugSwitch:
-    # Where the switching happens
+    
+    # Print number used to determine debug output
+    print(d1)
+    
+    # Where the switching happens    
     def switch(self, dbm):
         return getattr(self, 'case_' + str(dbm), lambda: parser.print_help())()
     # Where the switch goes
