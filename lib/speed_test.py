@@ -22,11 +22,7 @@ key = cfgIP()
 
 address = "http://api.ipstack.com/" + ip + "?access_key=" + key + "&output=json&fields=region_name,continent_name"
 
-print(address)
-
 with urllib.request.urlopen(address) as url:
     ipstack = json.loads(url.read().decode())
     region = ipstack['region_name']
     continent = ipstack['continent_name']
-
-print(region, continent)
