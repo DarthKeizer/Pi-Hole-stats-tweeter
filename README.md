@@ -27,7 +27,7 @@ Send a daily tweet with your Pi-Hole statistics and other system information!
 This will tweet your stats at 23:55 everyday and redirects output to ~/tweetStats/tweetStats.txt so you know that it actually worked.
 
 ```
-55 23 * * * root cd ~/tweetStat/ && python3 tweetStat.py >> ~/tweetStat/twitter_bot.txt
+55 23 * * * root cd ~/tweetStats/ && python3 tweetStats.sh >> ~/tweetStat/twitter_bot.txt
 ```
 
 # How it looks
