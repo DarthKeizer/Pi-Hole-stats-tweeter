@@ -36,8 +36,8 @@ def construct_tweet(ph, sy):
     Nettweet += '\nData Used (dl/ul): ' + sy[11] + '/' + sy[12]
     Nettweet += '\nIP: ' + sy[14]
     Nettweet += '\nISP: ' + sy[9]
-    Nettweet += '\nCity: ' + sy[15]
-    Nettweet += '\nCountry: ' + sy[16]
+    Nettweet += '\nRegion: ' + sy[15]
+    Nettweet += '\nContinent: ' + sy[16]
     Nettweet += '\nShare: ' + sy[10]
     Nettweet += '\n#Speedtest'
     # print(tweet) # always print tweet to console so we can see the output locally

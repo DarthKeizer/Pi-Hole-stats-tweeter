@@ -20,11 +20,13 @@ country = client["country"]
 
 key = cfgIP()
 
-address = "http://api.ipstack.com/" + ip + "?access_key=" + key + "&output=json&fields=city"
+address = "http://api.ipstack.com/" + ip + "?access_key=" + key + "&output=json&fields=region_name,continent_name"
 
 print(address)
 
 with urllib.request.urlopen(address) as url:
-    city = json.loads(url.read().decode())['city']
+    ipstack = json.loads(url.read().decode())
+    region = ipstack['region_name']
+    continent = ipstack['continent_name']
 
-print(city)
+print(region, continent)
