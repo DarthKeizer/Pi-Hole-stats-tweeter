@@ -20,7 +20,7 @@ def construct_tweet(ph, sy):
     
     # Second Tweet
     SYtweet = '#SystemStats'
-    SYtweet += '\nCPU Laod AVG: ' + sy[1] # CPU load average
+    SYtweet += '\nCPU Load AVG: ' + sy[1] # CPU load average
     SYtweet += '\nRam Usage: ' + sy[2] # RAM usage
     SYtweet += '\nDisk Usage: ' + sy[4] # disk usage information
     SYtweet += '\nNetwork Interfaces: ' + sy[3] # network interface names (doesn't include the loopback interface)
