@@ -17,3 +17,4 @@ ds = data["download"]/1000000
 pg = data["ping"]
 isp = client["isp"]
 share = data["share"]
+ip = client["ip"]

@@ -30,6 +30,7 @@ def construct_tweet(ph, sy):
     Nettweet += '\nPing: ' + sy[8] # Ping via speedtest-cli
     Nettweet += '\nDown/Up Speed: ' + sy[7] + '/' + sy[6] # Upload speed via speedtest-cli
     Nettweet += '\nData Used (dl/ul): ' + sy[11] + '/' + sy[12]
+    Nettweet += '\nIP: ' + sy[14]
     Nettweet += '\nISP: ' + sy[9]
     Nettweet += '\nShare: ' + sy[10]
     Nettweet += '\n#Speedtest'
