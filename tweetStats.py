@@ -34,6 +34,7 @@ def main():
         s.switch(d) 
     else: # if no args send it!!
         tweet_it(ga(cfgt()))
+        print('Status posted!')
 
 # action really happens down here tho
 if __name__ == '__main__':
