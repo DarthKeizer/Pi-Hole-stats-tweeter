@@ -26,6 +26,7 @@ def tweet_it(apiTW):
     tweets = [PHtweet, SYtweet, Nettweet]
     th = Threader(tweets, api, wait=2, end_string=False)
     th.send_tweets()
+    print('Status posted!')
 
 # Make it Happen!!
 def main():
@@ -34,7 +35,6 @@ def main():
         s.switch(d) 
     else: # if no args send it!!
         tweet_it(ga(cfgt()))
-        print('Status posted!')
 
 # action really happens down here tho
 if __name__ == '__main__':
