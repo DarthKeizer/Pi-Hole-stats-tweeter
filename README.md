@@ -70,19 +70,36 @@ This will tweet your stats at 23:55 everyday and redirects output to ~/tweetStat
 # How it looks
 
 ```
-🚫🌐: 811,593
-🈵⁉: 22,636
-📢🚫: 10,520|46.47%
-⁉⏭: 6,436
-⁉💾: 5,680
-🦄🙈: 5
-🔐🎚: 2
-🚫📝⌛: 2019-05-19 08:37
-⚖️x̅: 0.0, 0.0, 0.0
-🐏📈: 504M/1004M|40.5%
-🔗📡: ens4, tun0, tun1
-💾📊: 9G/28G|32.14%
-🐧🌽: Linux-5.0.0-1006-gcp-x86_64-with-Ubuntu-19.10-eoan
-🖥️👢⏳: 2019-05-19 03:40
+Tweet 1
+#PiHoleStats
+Blocklist Size: 761,313
+Total Querries: 17,523
+Querriess Blocked: 0|0%
+Querries Forwarded: 505
+Querries Cached: 17,018
+Unique Clients: 1
+Privacy Level: 2
+Gravity Last Updated: 2019-07-16 18:03
+#Python
+
+ Tweet 2
+#SystemStats
+CPU Laod AVG: 0.0, 0.0, 0.0
+Ram Usage: 476M/1G|39.0%
+Disk Usage: 9G/28G|32.14%
+Kernel && OS: Linux-5.0.0-1010-gcp-x86_64-with-Ubuntu-19.10-eoan
+Boot Time: 2019-07-16 18:12
+#Ubuntu
+
+ Tweet 3
+#NetStats
+Network Interfaces: ens4, tun0, tun1
+Ping: 26.27 ms
+Down/Up Speed: 795.43 Mbps/475.43 Mbps
+Data Used (dl/ul): 390.41 MB/144.5 MB
+IP: 35.222.xx.xx
+ISP: Google Cloud
+Share: http://www.speedtest.net/result/8436497611.png
+#Speedtest
 ```
 ![example](.github/exampleShot.png)
