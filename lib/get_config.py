@@ -56,3 +56,15 @@ def get_cfgt():
     # return as tuple to ensure data integrity
     return (consumer_key, consumer_secret, access_token, access_token_secret,
             tp, cfgT)
+
+    
+def get_cfgip():
+    
+    import json as js  # Used to parse config.json
+
+    with open('config.json') as data:
+            cfg = js.load(data)
+    
+    ipstackKey = cfg['ipstack']['access_key']
+
+    return (ipstackKey)

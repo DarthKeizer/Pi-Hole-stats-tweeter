@@ -1,6 +1,7 @@
 import os
-import json
+import urllib.request, json
 import math
+from lib.get_config import get_cfgip as cfgIP
 
 jstring = os.popen("speedtest-cli --share --json").read()
 data = json.loads(jstring)
@@ -15,3 +16,15 @@ pg = data["ping"]
 isp = client["isp"]
 share = data["share"]
 ip = client["ip"]
+country = client["country"]
+
+key = cfgIP()
+
+address = "http://api.ipstack.com/" + ip + "?access_key=" + key + "&output=json&fields=city"
+
+print(address)
+
+with urllib.request.urlopen(address) as url:
+    city = json.loads(url.read().decode())['city']
+
+print(city)

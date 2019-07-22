@@ -8,6 +8,9 @@
             "consumer_secret":"Get this from twitter when creating the application",
             "access_token":"Get this from twitter when creating the application",
             "access_token_secret":"Get this from twitter when creating the application"
+        },
+        "ipstack":{
+            "access_key":" get this from https://ipstack.com/signup/free"
         }
     },
     "pihole":{
@@ -19,7 +22,7 @@
         "access_token":"VALUE4",
         "access_token_secret":"VALUE5"
     },
-    "facbook":{
-        "access_token":"VALUE6"
+    "ipstack":{
+        "access_key":"VALUE6"
     }
 }
