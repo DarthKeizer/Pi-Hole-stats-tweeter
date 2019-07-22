@@ -40,10 +40,12 @@ class debugSwitch:
         return debug_tweet()
     def case_5(self): # Check pi-hole api reachability
         from lib.pihole_info import pihole_info as pi # where pihole information is gathered
-        return print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+        print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+        return
     def case_6(self): # Print Test Tweet && Check pi-hole api reachability
         from lib.pihole_info import pihole_info as pi # where pihole information is gathered
-        return debug_tweet(), print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+        print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+        return debug_tweet()
     def case_8(self): # Check Twitter login && Check pi-hole api reachability
         from lib.get_api import get_api as apiT # where we interact with the Twitter API
         from lib.pihole_info import pihole_info as pi # where pihole information is gathered
