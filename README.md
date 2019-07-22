@@ -36,10 +36,10 @@ This will tweet your stats at 23:55 everyday and redirects output to ~/tweetStat
 Tweet 1
 #PiHoleStats
 Blocklist Size: 761,313
-Total Querries: 17,523
-Querriess Blocked: 0|0%
-Querries Forwarded: 505
-Querries Cached: 17,018
+Total Queries: 25,137
+Queries Blocked: 0|0%
+Queries Forwarded: 509
+Queries Cached: 24,628
 Unique Clients: 1
 Privacy Level: 2
 Gravity Last Updated: 2019-07-16 18:03
@@ -47,22 +47,24 @@ Gravity Last Updated: 2019-07-16 18:03
 
  Tweet 2
 #SystemStats
-CPU Laod AVG: 0.0, 0.0, 0.0
-Ram Usage: 476M/1G|39.0%
+CPU Load AVG: 0.08, 0.02, 0.01
+Ram Usage: 483M/1G|39.3%
 Disk Usage: 9G/28G|32.14%
+Network Interfaces: ens4, tun0, tun1
 Kernel && OS: Linux-5.0.0-1010-gcp-x86_64-with-Ubuntu-19.10-eoan
 Boot Time: 2019-07-16 18:12
 #Ubuntu
 
  Tweet 3
 #NetStats
-Network Interfaces: ens4, tun0, tun1
-Ping: 26.27 ms
-Down/Up Speed: 795.43 Mbps/475.43 Mbps
+Ping: 38.68 ms
+Down/Up Speed: 994.81 Mbps/409.19 Mbps
 Data Used (dl/ul): 390.41 MB/144.5 MB
 IP: 35.222.xx.xx
 ISP: Google Cloud
-Share: http://www.speedtest.net/result/8436497611.png
+Region: Virginia
+Continent: North America
+Share: http://www.speedtest.net/result/8438272507.png
 #Speedtest
 ```
-![example](.github/exampleShot.png)
+![example](.github/tweetStats.gif)
