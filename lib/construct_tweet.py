@@ -9,10 +9,10 @@ def construct_tweet(ph, sy):
     # First Tweet
     PHtweet = '#PiHoleStats'
     PHtweet += '\nBlocklist Size: ' + ph[0] # size of block list
-    PHtweet += '\nTotal Querries: ' + ph[1] # total querries
-    PHtweet += '\nQuerriess Blocked: ' + ph[2] # ads blocked
-    PHtweet += '\nQuerries Forwarded: ' + ph[3] # forwarded querries
-    PHtweet += '\nQuerries Cached: ' + ph[4] # cached querries
+    PHtweet += '\nTotal Queries: ' + ph[1] # total querries
+    PHtweet += '\nQueries Blocked: ' + ph[2] # ads blocked
+    PHtweet += '\nQueries Forwarded: ' + ph[3] # forwarded querries
+    PHtweet += '\nQueries Cached: ' + ph[4] # cached querries
     PHtweet += '\nUnique Clients: ' + ph[5] # unique clients
     PHtweet += '\nPrivacy Level: ' + ph[6] # privacy level
     PHtweet += '\nGravity Last Updated: ' + ph[7] # gravity last updated (printed as your local time)
