@@ -28,7 +28,6 @@ def tweet_it(apiTW):
     tweets = [PHtweet, SYtweet, Nettweet]
     th = Threader(tweets, api, wait=2, end_string=False)
     th.send_tweets()
-    print('Status posted!')
 
     for x in th.tweet_ids_:
         print('Status posted! https://twitter.com/' + ga(cfgt())[0].me().screen_name + '/status/' + str(x))
