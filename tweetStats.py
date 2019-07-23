@@ -29,7 +29,10 @@ def tweet_it(apiTW):
     th = Threader(tweets, api, wait=2, end_string=False)
     th.send_tweets()
     print('Status posted!')
-    print(*th.tweet_ids_)
+
+    for x in th.tweet_ids_:
+        print('Status posted! https://twitter.com/' + ga(cfgt())[0].me().screen_name + '/status/' + str(x))
+
 
 # Make it Happen!!
 def main():
