@@ -29,7 +29,7 @@ def tweet_it(apiTW):
     th = Threader(tweets, api, wait=2, end_string=False)
     th.send_tweets()
     print('Status posted!')
-    print(th.tweet_ids_)
+    print(*th.tweet_ids_)
 
 # Make it Happen!!
 def main():
