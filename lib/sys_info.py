@@ -3,7 +3,6 @@
 # retreive data for system information
 
 def sys_info():
-    import platform
     from platform import platform as pl  # used to retreive OS && kernel version
     from distro import name as OSname # used to retreive OS name for hashtag
     from re import sub as re # used to apply regex
