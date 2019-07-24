@@ -30,7 +30,7 @@ def get_cfgp():
 # get data needed for twitter communication
 def get_cfgt():
     import json as js  # Used to parse config.json
-    import tweepy as tp # used to actually send tweet is also
+    import tweepy as tp # used to verify login creds is also
     # ^^^^^^^^^^ passed as get_config[5] for no good reason
 
     # check for config.json

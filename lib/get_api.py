@@ -14,5 +14,5 @@ def get_api(keys):
         return
     return (api, keys[0],
             keys[4], login) # get_api[0] && get_api[1] && get_api[2]
-        #   ^^ Tweepy
+        #   ^^ Tweepy recieved from get_config[3]
                     #  ^^ login result
