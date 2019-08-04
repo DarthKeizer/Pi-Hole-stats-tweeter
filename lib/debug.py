@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from lib.pihole_info import pihole_info as pi # where pihole information is gathered
+from lib.get_api import get_api as apiT # where we interact with the Twitter API
 import lib.get_config as apiC # where all the config data lives
 from emoji import UNICODE_EMOJI # where we get our emoji dictionary from
 from argparse import ArgumentParser # how we parse command line when/if they are passed
@@ -31,24 +33,19 @@ class debugSwitch:
     def case_1(self): # Print test tweet with real values
         return debug_tweet()
     def case_3(self): # Check Twitter login
-        from lib.get_api import get_api as apiT # where we interact with the Twitter API
         print(apiT(apiC.get_cfgt())[3])
+        print(apiC.get_cfgt()[5])
         return
     def case_4(self): # Print Test Tweet && Verify Twitter Login
-        from lib.get_api import get_api as apiT # where we interact with the Twitter API
         print(apiT(apiC.get_cfgt())[3])
         return debug_tweet()
     def case_5(self): # Check pi-hole api reachability
-        from lib.pihole_info import pihole_info as pi # where pihole information is gathered
         print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
         return
     def case_6(self): # Print Test Tweet && Check pi-hole api reachability
-        from lib.pihole_info import pihole_info as pi # where pihole information is gathered
         print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
         return debug_tweet()
     def case_8(self): # Check Twitter login && Check pi-hole api reachability
-        from lib.get_api import get_api as apiT # where we interact with the Twitter API
-        from lib.pihole_info import pihole_info as pi # where pihole information is gathered
         print(apiT(apiC.get_cfgt())[3])
         print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
         return
