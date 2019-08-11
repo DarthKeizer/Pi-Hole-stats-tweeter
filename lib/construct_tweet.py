@@ -26,18 +26,18 @@ def construct_tweet(ph, sy):
     SYtweet += '\nNetwork Interfaces: ' + sy[3] # network interface names (doesn't include the loopback interface)
     SYtweet += '\nKernel && OS: ' + sy[5] # kernel && OS information
     SYtweet += '\nBoot Time: ' + sy[0] # time when system booted (printed as your local time)
-    SYtweet += '\n#' + sy[13]
+    SYtweet += '\n#' + sy[13] 
 
     # Third Tweet
     Nettweet = '#NetStats'
     Nettweet += '\nPing: ' + sy[8] # Ping via speedtest-cli
-    Nettweet += '\nSpeed Achieved (dl/ul): ' + sy[7] + '/' + sy[6] # Upload speed via speedtest-cli
-    Nettweet += '\nData Used (dl/ul): ' + sy[11] + '/' + sy[12]
-    Nettweet += '\nIP: ' + sy[14]
-    Nettweet += '\nISP: ' + sy[9]
-    Nettweet += '\nRegion: ' + sy[15]
-    Nettweet += '\nContinent: ' + sy[16]
-    Nettweet += '\nShare: ' + sy[10]
+    Nettweet += '\nSpeed Achieved (dl/ul): ' + sy[7] + '/' + sy[6] # Speed Achieved (dl/ul) via speedtest-cli
+    Nettweet += '\nData Used (dl/ul): ' + sy[11] + '/' + sy[12] # Data used during speedtest (dl/ul) via speedtest-cli
+    Nettweet += '\nIP: ' + sy[14] # IP address as reported by speedtest-cli
+    Nettweet += '\nISP: ' + sy[9] # ISP as reported by speedtest-cli
+    Nettweet += '\nRegion: ' + sy[15] # give region to preserve exact location
+    Nettweet += '\nContinent: ' + sy[16] # give continent to preserve exact location
+    Nettweet += '\nShare: ' + sy[10] # give sharable speedtest link (how can i make this show as a pic on Twitter??)
     Nettweet += '\n#Speedtest'
-    # print(tweet) # always print tweet to console so we can see the output locally
+
     return PHtweet, SYtweet, Nettweet
