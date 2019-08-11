@@ -30,9 +30,9 @@ def construct_tweet(ph, sy):
 
     # Third Tweet
     Nettweet = '#NetStats'
-    # Nettweet += '\nNetwork Interfaces: ' + sy[3] # network interface names (doesn't include the loopback interface)
+    Nettweet += '\nNetwork Interfaces: ' + sy[3] # network interface names (doesn't include the loopback interface)
     Nettweet += '\nPing: ' + sy[8] # Ping via speedtest-cli
-    Nettweet += '\nDown/Up Speed: ' + sy[7] + '/' + sy[6] # Upload speed via speedtest-cli
+    Nettweet += '\nSpeed Achieved (dl/ul): ' + sy[7] + '/' + sy[6] # Upload speed via speedtest-cli
     Nettweet += '\nData Used (dl/ul): ' + sy[11] + '/' + sy[12]
     Nettweet += '\nIP: ' + sy[14]
     Nettweet += '\nISP: ' + sy[9]
