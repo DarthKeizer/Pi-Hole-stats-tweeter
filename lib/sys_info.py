@@ -15,11 +15,8 @@ def sys_info():
     from datetime import datetime as dt # used to calculate UTC from epoch
     from lib.speed_test import us, ds, pg, isp, share, dlByte, ulByte, ip, region, continent, data
  
-    
-
     regex = r"'lo'(?:,\s*)?|[][')(]|(?:,\s*)?'lo'" # modified suggestion from https://stackoverflow.com/questions/56153426/regex-for-replacing-special-pa>
     total, used, free = du("/") # Get disk stats - we only use 2 of these but the function requires all 3 (total, used, free)
-    free = None
     GBtotal = (total // (2**30)) # convert total space to GB
     GBused = (used // (2**30)) # convert used space to GB
     percentHDD = round(100 * float(GBused)/float(GBtotal), 2) # create percentage for disk used
