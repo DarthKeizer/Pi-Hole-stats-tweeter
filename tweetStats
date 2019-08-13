@@ -1,1 +1,3 @@
-55 23 * * * root cd ~/tweetStats/ && ./tweetStats.sh >> ~/tweetStats/twitter_bot.txt
+#!/bin/bash
+cd /home/VALUE7/tweetStats
+python3 ./tweetStats.py >> tweetStats.txt
