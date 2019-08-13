@@ -9,5 +9,5 @@ src/
 # Config
 config.ini
 config.json
-tweetStats.sh
 .DS_Store
+tweetStats.sh
