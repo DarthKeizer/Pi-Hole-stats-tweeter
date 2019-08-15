@@ -7,15 +7,18 @@ Send a daily tweet with your Pi-Hole statistics and other system information!
 ### Prerequisites
 
   * Pi-hole
-   - install Pi-hole (install.pi-hole.net) 
-   - `api_path` = Path to `http://pi.hole/admin/api.php` of Pi-Hole (if you're running this script from the machine running Pi-hole that URL should work)
+    
+    - install Pi-hole (install.pi-hole.net) 
+    - `api_path` = Path to `http://pi.hole/admin/api.php` of Pi-Hole (if you're running this script from the machine running Pi-hole that URL should work)
 
   * Twitter
-   - Tokens: Create an application [here](https://apps.twitter.com/)
+  
+    - Tokens: Create an application [here](https://apps.twitter.com/)
 
   * speedtest-cli
-   - install speedtest-cli from your package manager
-   - `access_key` = get this from https://ipstack.com/signup/free
+   
+    - install speedtest-cli from your package manager
+    - `access_key` = get this from https://ipstack.com/signup/free
 
 ### Guided Setup (install script)
 
