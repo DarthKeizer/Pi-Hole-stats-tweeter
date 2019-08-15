@@ -15,7 +15,7 @@ Send a daily tweet with your Pi-Hole statistics and other system information!
 
   * speedtest-cli
    - install speedtest-cli from your package manager
-   - "access_key":" get this from https://ipstack.com/signup/free"
+   - `access_key` = get this from https://ipstack.com/signup/free
 
 ### Guided Setup (install script)
 
