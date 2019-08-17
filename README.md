@@ -4,13 +4,36 @@ Send a daily tweet with your Pi-Hole statistics and other system information!
 
 ## How to use
 
+### Prerequisites
+
+  * Pi-hole
+    
+    - install Pi-hole (https://install.pi-hole.net) 
+    - `api_path` = Path to `http://pi.hole/admin/api.php` of Pi-Hole (if you're running this script from the machine running Pi-hole that URL should work)
+
+  * Twitter
+  
+    - Tokens: Create an application [here](https://apps.twitter.com/)
+
+  * speedtest-cli
+   
+    - install speedtest-cli from your package manager
+    - `access_key` = get this from https://ipstack.com/signup/free
+
+### Guided Setup (install script)
+
+```
+wget https://raw.githubusercontent.com/mwoolweaver/tweetStats/master/install.sh
+./install.sh
+```
+
+### Manual Setup (no install script)
+
 1. `git clone https://github.com/mwoolweaver/tweetStats.git`
 2. Install Python 3
 3. `pip3 install -U -r requirements.txt`
-4. Copy `config.json.example` to `config.json` and adjust it `cp config.json.example config.json`
-   - `api_path` = Path to your `/admin/api.php` of Pi-Hole
-   - Tokens: Create an application [here](https://apps.twitter.com/)
-5. Run it! `python3 tweetStats.py` `python3 tweetStats.py -h` -> for help
+4. `cp config.json.example config.json` and adjust it
+5. Run it! `python3 tweetStats.py` or `python3 tweetStats.py -h` for help
 6. ???
 7. Profit
 
@@ -24,11 +47,23 @@ Send a daily tweet with your Pi-Hole statistics and other system information!
 
 ## Cronjob
 
-This will tweet your stats at 23:55 everyday and redirects output to ~/tweetStats/tweetStats.txt so you know that it actually worked.
+test cron job w/ `sudo run-parts /etc/cron.daily`
+
+### Use Install Script
+
+or 
+
+### Manual Setup
+
+creaate file ```/etc/cron.daily/tweetStats``` with the following contents
 
 ```
-55 23 * * * root cd ~/tweetStats/ && python3 tweetStats.sh >> ~/tweetStat/twitter_bot.txt
+#!/bin/bash
+cd /path/to/folder/containing/tweetStats.py/
+python3 ./tweetStats.py >> tweetStats.txt
+
 ```
+
 
 # How it looks
 

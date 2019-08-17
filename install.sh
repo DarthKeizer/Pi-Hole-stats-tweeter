@@ -8,7 +8,7 @@ WHATITDOES="This is a script from mwoolweaver to tweet the Pi-Hole stats and oth
 then
 echo "Declined $NAMEOFAPP"
 else
-sudo apt-get install python3-pip git
+sudo apt-get install python3-pip git speedtest-cli
 git clone https://github.com/mwoolweaver/tweetStats.git ~/
 cd ~/tweetStats
 sudo chmod 777 config.json
