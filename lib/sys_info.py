@@ -43,6 +43,7 @@ def sys_info():
     hddStats = usedGB + '/' + totalGB + '|' + percentHDD + '%' # sys_info[4] - All hdd stats in 1 variable
     kernelOS = pl() # sys_info[5] - Kernel version && OS version
     OSN = OSname(pretty=False)
+    oSn = OSN.split(' ', 1)[0]
     ul = str(uls) + " Mbps"
     dl = str(dls) + " Mbps"
     ping = str(pings) + " ms"
