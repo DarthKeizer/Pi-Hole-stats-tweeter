@@ -28,7 +28,7 @@ def speedtest_ip():
     address = "http://api.ipstack.com/" + ip + "?access_key=" + key + "&output=json&fields=region_name,continent_name"
 
     with urllib.request.urlopen(address) as url:
-    ipstack = json.loads(url.read().decode())
+         ipstack = json.loads(url.read().decode())
 
     uls = round(us, 2)
     dls = round(ds, 2)
