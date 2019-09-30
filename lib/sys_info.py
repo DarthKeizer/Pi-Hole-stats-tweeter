@@ -13,7 +13,7 @@ def sys_info():
     from psutil import getloadavg as gl # how we get cpu load average
     import netifaces as ni  # used to retreive network interfaces
     from datetime import datetime as dt # used to calculate UTC from epoch
-    from lib.speed_test import us, ds, pg, isp, share, dlByte, ulByte, ip, region, continent, data
+    
  
     regex = r"'lo'(?:,\s*)?|[][')(]|(?:,\s*)?'lo'" # modified suggestion from https://stackoverflow.com/questions/56153426/regex-for-replacing-special-pa>
     total, used, free = du("/") # Get disk stats - we only use 2 of these but the function requires all 3 (total, used, free)
@@ -28,27 +28,16 @@ def sys_info():
     totalGB = sz(total) # total disk space in GB
     usedGB = sz(used) # total disk space used in GB
     percentHDD = str(percentHDD) # percentage of disk space used
-    uls = round(us, 2)
-    dls = round(ds, 2)
-    pings = round(pg, 2)
-    dlMB = round(dlByte, 2)
-    ulMB = round(ulByte, 2)
-    ip = '.'.join(ip.split('.')[:2]) + '.xx.xx'
+    OSN = OSname(pretty=False) # get OS name
 
     # variables to  be passed
-    sysUP = dt.utcfromtimestamp(bt()).strftime("%Y-%m-%d %H:%M") # sys_info[0] - uptime
-    cpuLoadAvg = re(regex, '', cpuLoadAvg) # sys_info[1] - cpu load average
-    memStats = usedMem + '/' + totMem + '|' + percentMem + '%' # sys_info[2] - All RAM stats in 1 variable
-    netfaces = re(regex, '', netfaces) # sys_info[3] - Network interface not including the loopback interface
-    hddStats = usedGB + '/' + totalGB + '|' + percentHDD + '%' # sys_info[4] - All hdd stats in 1 variable
-    kernelOS = pl() # sys_info[5] - Kernel version && OS version
-    OSN = OSname(pretty=False)
-    oSn = OSN.split(' ', 1)[0]
-    ul = str(uls) + " Mbps"
-    dl = str(dls) + " Mbps"
-    ping = str(pings) + " ms"
-    ulMBs = str(ulMB) + " MB"
-    dlMBs = str(dlMB) + " MB"
+    cpuLoadAvg = re(regex, '', cpuLoadAvg) # cpu load average
+    memStats = usedMem + '/' + totMem + '|' + percentMem + '%' # All RAM stats in 1 variable
+    hddStats = usedGB + '/' + totalGB + '|' + percentHDD + '%' # All hdd stats in 1 variable
+    netfaces = re(regex, '', netfaces) # Network interface not including the loopback interface
+    kernelOS = pl() # Kernel version && OS version
+    sysUP = dt.utcfromtimestamp(bt()).strftime("%Y-%m-%d %H:%M") # uptime in your local time
+    oSn = OSN.split(' ', 1)[0] # make OS name pretty
 
     # return as tuple to ensure data integrity
-    return (sysUP, cpuLoadAvg, memStats, netfaces, hddStats, kernelOS, ul, dl, ping, isp, share, dlMBs, ulMBs, oSn, ip, region, continent, free)
+    return (cpuLoadAvg, memStats, hddStats, netfaces, kernelOS, sysUP, oSn, free)

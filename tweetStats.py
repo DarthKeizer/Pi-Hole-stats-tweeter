@@ -14,9 +14,9 @@ def tweet_it(apiTW):
     print(ga(cfgt())[3])
 
     # build tweet
-    PHtweet = ct.construct_tweet(ct.pi(), ct.si())[0]
-    SYtweet = ct.construct_tweet(ct.pi(), ct.si())[1]
-    Nettweet = ct.construct_tweet(ct.pi(), ct.si())[2]
+    PHtweet = ct.construct_tweet()[0]
+    SYtweet = ct.construct_tweet()[1]
+    Nettweet = ct.construct_tweet()[2]
     # and send it
 
     keys = dict(consumer_key=cfgt()[0],
