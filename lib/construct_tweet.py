@@ -5,6 +5,7 @@
 def construct_tweet():
 
     from lib.pihole_info import pihole_info as ph # where pihole information is gathered
+    
     # First Tweet
     PHtweet = '#PiHoleStats'
     PHtweet += '\nBlocklist Size: ' + ph[0] # size of block list
@@ -18,6 +19,7 @@ def construct_tweet():
     PHtweet += '\n#Python'
 
     from lib.sys_info import sys_info as sy # where system information is gathered
+    
     # Second Tweet
     SYtweet = '#SystemStats'
     SYtweet += '\nCPU Load AVG: ' + sy[0] # CPU load average
@@ -29,6 +31,7 @@ def construct_tweet():
     SYtweet += '\n#' + sy[6] # create hashtag from OS name
 
     from lib.speed_test import speedtest_ip as stp
+    
     # Third Tweet
     Nettweet = '#NetStats'
     Nettweet += '\nPing: ' + stp[0] # Ping via speedtest-cli
