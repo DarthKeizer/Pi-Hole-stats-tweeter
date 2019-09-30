@@ -14,9 +14,9 @@ def tweet_it(apiTW):
     print(apiTW[2])
 
     # build tweet
-    PHtweet = ct.construct_PHtweet(ct.pi())
-    SYtweet = ct.construct_SYtweet(ct.si())
-    NETtweet =  ct.construct_NETtweet(ct.sip())
+    PHtweet = ct.PHtweet(ct.pi())
+    SYtweet = ct.SYtweet(ct.si())
+    NETtweet =  ct.NETtweet(ct.sip())
     # and send it
 
     tweets = [PHtweet, SYtweet, NETtweet]

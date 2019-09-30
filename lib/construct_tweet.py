@@ -3,10 +3,10 @@
 
 from lib.pihole_info import pihole_info as pi # where pihole information is gathered
 from lib.sys_info import sys_info as si # where system information is gathered
-from lib.speed_test import speedtest_ip as sip
+from lib.speed_test import speedtest_ip as sip # where speedtest information is gathered
 
 # Build the tweet
-def construct_PHtweet(ph):
+def PHtweet(ph):
 
     # First Tweet
     PHtweet = '#PiHoleStats'
@@ -17,35 +17,37 @@ def construct_PHtweet(ph):
     PHtweet += '\nQueries Cached: ' + ph[4] # cached queries
     PHtweet += '\nUnique Clients: ' + ph[5] # unique clients
     PHtweet += '\nPrivacy Level: ' + ph[6] # privacy level
-    PHtweet += '\nGravity Last Updated: ' + ph[7] # gravity last updated (printed as your local time)
+    PHtweet += '\nGravity Last Updated: ' + ph[7] # gravity last updated (your local time)
     PHtweet += '\n#Python'
     
     return (PHtweet)
     
-def construct_SYtweet(sy):
+def SYtweet(sy):
+
     # Second Tweet
     SYtweet = '#SystemStats'
     SYtweet += '\nCPU Load AVG: ' + sy[0] # CPU load average
     SYtweet += '\nRam Usage: ' + sy[1] # RAM usage
     SYtweet += '\nDisk Usage: ' + sy[2] # disk usage information
-    SYtweet += '\nNetwork Interfaces: ' + sy[3] # network interface names (doesn't include the loopback interface)
+    SYtweet += '\nNetwork Interfaces: ' + sy[3] # network interface names (no loopback)
     SYtweet += '\nKernel && OS: ' + sy[4] # kernel && OS information
-    SYtweet += '\nBoot Time: ' + sy[5] # time when system booted (printed as your local time)
+    SYtweet += '\nBoot Time: ' + sy[5] # time when system booted (your local time)
     SYtweet += '\n#' + sy[6] # create hashtag from OS name
     
     return (SYtweet)
     
-def construct_NETtweet(stp):
+def NETtweet(stp):
+
     # Third Tweet
     Nettweet = '#NetStats'
     Nettweet += '\nPing: ' + stp[0] # Ping via speedtest-cli
-    Nettweet += '\nSpeed Achieved (dl/ul): ' + stp[1] # Speed Achieved (dl/ul) via speedtest-cli
-    Nettweet += '\nData Used (dl/ul): ' + stp[2] # Data used during speedtest (dl/ul) via speedtest-cli
-    Nettweet += '\nIP: ' + stp[3] # IP address as reported by speedtest-cli
-    Nettweet += '\nISP: ' + stp[4] # ISP as reported by speedtest-cli
+    Nettweet += '\nSpeed Achieved (dl/ul): ' + stp[1] # Speed (dl/ul) via speedtest-cli
+    Nettweet += '\nData Used (dl/ul): ' + stp[2] # Data used (dl/ul) via speedtest-cli
+    Nettweet += '\nIP: ' + stp[3] # IP address from speedtest-cli
+    Nettweet += '\nISP: ' + stp[4] # ISP from speedtest-cli
     Nettweet += '\nRegion: ' + stp[5] # give region to preserve exact location
     Nettweet += '\nContinent: ' + stp[6] # give continent to preserve exact location
-    Nettweet += '\nShare: ' + stp[7] # give sharable speedtest link (how can i make this show as a pic on Twitter??)
+    Nettweet += '\nShare: ' + stp[7] # give sharable speedtest link
     Nettweet += '\n#Speedtest'
 
     return (Nettweet)
