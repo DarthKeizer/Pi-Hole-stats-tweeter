@@ -5,7 +5,7 @@ from lib.get_api import get_api as ga # where we interact with the Twitter API
 import lib.construct_tweet as ct # where the tweet is put together
 from lib.debug import debug_tweet, d1, s # All the deugging happens here && parses for passed arguements
 
-from TwitterAPI import TwitterAPI
+
 from threader import Threader
 
 # Tweet it!
@@ -19,14 +19,8 @@ def tweet_it(apiTW):
     NETtweet =  ct.construct_NETtweet(ct.sip())
     # and send it
 
-    keys = dict(consumer_key=cfgt()[0],
-            consumer_secret=cfgt()[1],
-            access_token_key=cfgt()[2],
-            access_token_secret=cfgt()[3])
-    api = TwitterAPI(**keys)
-
     tweets = [PHtweet, SYtweet, NETtweet]
-    th = Threader(tweets, api, wait=2, end_string=False)
+    th = Threader(tweets, apiTW[1], wait=2, end_string=False)
     th.send_tweets()
 
     for x in th.tweet_ids_:
