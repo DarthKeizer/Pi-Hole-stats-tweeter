@@ -6,7 +6,7 @@ from lib.sys_info import sys_info as si # where system information is gathered
 from lib.speed_test import speedtest_ip as sip
 
 # Build the tweet
-def construct_tweet(ph, sy, stp):
+def construct_PHtweet(ph):
 
     # First Tweet
     PHtweet = '#PiHoleStats'
@@ -20,6 +20,9 @@ def construct_tweet(ph, sy, stp):
     PHtweet += '\nGravity Last Updated: ' + ph[7] # gravity last updated (printed as your local time)
     PHtweet += '\n#Python'
     
+    return (PHtweet)
+    
+def construct_SYtweet(sy):
     # Second Tweet
     SYtweet = '#SystemStats'
     SYtweet += '\nCPU Load AVG: ' + sy[0] # CPU load average
@@ -30,6 +33,9 @@ def construct_tweet(ph, sy, stp):
     SYtweet += '\nBoot Time: ' + sy[5] # time when system booted (printed as your local time)
     SYtweet += '\n#' + sy[6] # create hashtag from OS name
     
+    return (SYtweet)
+    
+def construct_NETtweet(stp):
     # Third Tweet
     Nettweet = '#NetStats'
     Nettweet += '\nPing: ' + stp[0] # Ping via speedtest-cli
@@ -42,4 +48,4 @@ def construct_tweet(ph, sy, stp):
     Nettweet += '\nShare: ' + stp[7] # give sharable speedtest link (how can i make this show as a pic on Twitter??)
     Nettweet += '\n#Speedtest'
 
-    return (PHtweet, SYtweet, Nettweet)
+    return (Nettweet)

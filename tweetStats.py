@@ -12,17 +12,11 @@ from threader import Threader
 def tweet_it(apiTW):
     
     print(ga(cfgt())[3])
-    
-    pi = ct.pi()
-    
-    si = ct.si()
-    
-    sip = ct.sip()
 
     # build tweet
-    PHtweet = ct.construct_tweet(pi, si, sip)[0]
-    SYtweet = ct.construct_tweet(pi, si, sip)[1]
-    NETtweet =  ct.construct_tweet(pi, si, sip)[2]
+    PHtweet = ct.construct_PHtweet(ct.pi())
+    SYtweet = ct.construct_SYtweet(ct.si())
+    NETtweet =  ct.construct_NETtweet(ct.sip())
     # and send it
 
     keys = dict(consumer_key=cfgt()[0],
