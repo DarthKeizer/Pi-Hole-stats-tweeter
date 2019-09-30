@@ -53,7 +53,7 @@ def get_cfgt():
         raise SystemExit
     # return as tuple to ensure data integrity
     
-    keys = dict(consumer_key, consumer_secret, access_token_key, access_token_secret)
+    keys = dict(consumer_key=cfgT['consumer_key'], consumer_secret=cfgT['consumer_secret'], access_token_key=cfgT['access_token'], access_token_secret=cfgT['access_token_secret'])
     
     return (consumer_key, consumer_secret, access_token, access_token_secret, keys)
 
