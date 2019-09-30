@@ -11,7 +11,7 @@ from threader import Threader
 # Tweet it!
 def tweet_it(apiTW):
     
-    print(ga(cfgt())[3])
+    print(ga(cfgt())[2])
 
     # build tweet
     PHtweet = ct.construct_PHtweet(ct.pi())
