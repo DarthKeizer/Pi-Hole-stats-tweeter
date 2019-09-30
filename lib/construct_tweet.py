@@ -42,4 +42,4 @@ def construct_tweet(ph, sy, stp):
     Nettweet += '\nShare: ' + stp[7] # give sharable speedtest link (how can i make this show as a pic on Twitter??)
     Nettweet += '\n#Speedtest'
 
-    return PHtweet, SYtweet, Nettweet
+    return (PHtweet, SYtweet, Nettweet)
