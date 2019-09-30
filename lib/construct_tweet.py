@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-    from lib.pihole_info import pihole_info as pi # where pihole information is gathered
-    from lib.sys_info import sys_info as si # where system information is gathered
-    from lib.speed_test import speedtest_ip as sip
+from lib.pihole_info import pihole_info as pi # where pihole information is gathered
+from lib.sys_info import sys_info as si # where system information is gathered
+from lib.speed_test import speedtest_ip as sip
 
 # Build the tweet
 def construct_tweet(ph, sy, stp):
