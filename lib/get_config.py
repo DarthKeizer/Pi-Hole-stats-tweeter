@@ -55,7 +55,7 @@ def get_cfgt():
     
     keys = dict(consumer_key=cfgT['consumer_key'], consumer_secret=cfgT['consumer_secret'], access_token_key=cfgT['access_token'], access_token_secret=cfgT['access_token_secret'])
     
-    return (consumer_key, consumer_secret, access_token, access_token_secret, keys)
+    return (consumer_key, consumer_secret, access_token_key, access_token_secret, keys)
 
     
 def get_cfgip():
