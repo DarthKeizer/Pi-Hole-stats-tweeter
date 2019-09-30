@@ -24,7 +24,7 @@ def tweet_it(apiTW):
     th.send_tweets()
 
     for x in th.tweet_ids_:
-        print('Status posted! https://twitter.com/' + ga(cfgt())[0].me().screen_name + '/status/' + str(x))
+        print('Status posted! https://twitter.com/' + apiTW[0].me().screen_name + '/status/' + str(x))
 
 
 # Make it Happen!!
