@@ -31,6 +31,7 @@ def tweet_it(apiTW):
             access_token_secret=cfgt()[3])
     api = TwitterAPI(**keys)
 
+    tweets = [PHtweet, SYtweet, NETtweet]
     th = Threader(tweets, api, wait=2, end_string=False)
     th.send_tweets()
 
