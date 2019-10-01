@@ -12,9 +12,8 @@ def pihole_info(cfgp):
 
     # verify pi-hole reachability
     try:
-        cf = cfgp[0]
-        pihole_api = get(cf)  # is get_config[0] passed as keys[0]
-        x = pihole_api
+        pihole_api = get(cfgp[0]) # is get_config[0] passed as keys[0]
+        x = pihole_api.status_code
     except Exception as e:
         x = 'Could not contact API: ' + str(e)
         print(x)
@@ -52,4 +51,4 @@ def pihole_info(cfgp):
     glu = dt.utcfromtimestamp(gla["absolute"]).strftime('%Y-%m-%d %H:%M') # pihole_info[7] - date gravity was updated lastSaW F XR
     # return as tuple to ensure data integrity
     return (domains_being_blocked, dns_queries_today, ads_blocked, queries_forwarded,
-            queries_cached, unique_clients, privacy_level, glu, cf, x)
+            queries_cached, unique_clients, privacy_level, glu, x)

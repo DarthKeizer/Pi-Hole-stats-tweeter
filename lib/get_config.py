@@ -25,7 +25,7 @@ def get_cfgp():
         print('Please check your config.ini.')
         raise SystemExit
     # return as tuple to ensure data integrity
-    return (api, cfgP)
+    return (api)
 
 # get data needed for twitter communication
 def get_cfgt():
