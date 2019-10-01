@@ -59,26 +59,23 @@ s = debugSwitch()
 def debug_tweet():
 
     print('\n Twitter Keys')
-    print(apiC.get_cfgt()[5])
+    print(apiC.get_cfgt()[4])
 
     print("\nCheck Twitter Login")
-    from lib.get_api import get_api as apiT # where we interact with the Twitter API
-    print(apiT(apiC.get_cfgt())[3])
+    print(apiT(apiC.get_cfgt())[2])
     
     print('\n Pihole Address')
     print(apiC.get_cfgp()[1])
     
     print("\nPiHole Status")
-    from lib.pihole_info import pihole_info as pi # where pihole information is gathered
     print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
     
     print('\n Pihole Stats')
-    from lib.pihole_info import pihole_info as pi # where pihole information is gathered
     print(pi())
     
     print('\n SpeedTest Info')
-    from lib.speed_test import data
-    print(data)
+    from lib.speed_test import speedtest_ip
+    print(speedtest_ip())
     
     print('\n System Stats')
     from lib.sys_info import sys_info as si # where system information is gathered
@@ -87,9 +84,9 @@ def debug_tweet():
     print('\n The tweets that where created.')
     import lib.construct_tweet as ct # where the tweet is put together
     # build tweet
-    PHtweet = ct.construct_tweet(ct.pi(), ct.si())[0]
-    SYtweet = ct.construct_tweet(ct.pi(), ct.si())[1]
-    Nettweet = ct.construct_tweet(ct.pi(), ct.si())[2]
+    PHtweet = ct.PHtweet(ct.pi())
+    SYtweet = ct.SYtweet(ct.si())
+    NETtweet =  ct.NETtweet(ct.sip())
     tweet = '\n\n Tweet 1\n' + PHtweet + '\n\n Tweet 2\n' + SYtweet + '\n\n Tweet 3\n' + Nettweet + '\n'
     print(tweet)
     
