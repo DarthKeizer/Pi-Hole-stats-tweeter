@@ -68,7 +68,7 @@ def debug_tweet():
     print(apiC.get_cfgp()[0])
     
     print("\nPiHole Status")
-    print('if ' + str(pi()[8]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+    print('if ' + str(pi(apiC.get_cfgp()[0])[8]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
     
     print('\n Pihole Stats')
     print(pi())
