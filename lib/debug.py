@@ -33,8 +33,8 @@ class debugSwitch:
     def case_1(self): # Print test tweet with real values
         return debug_tweet()
     def case_3(self): # Check Twitter login
-        print(apiC.get_cfgt()[5])
-        print(apiT(apiC.get_cfgt())[3])
+        print(apiC.get_cfgt()[4])
+        print(apiT(apiC.get_cfgt())[2])
         return
     def case_4(self): # Print Test Tweet && Verify Twitter Login
         print(apiT(apiC.get_cfgt())[3])
@@ -46,8 +46,8 @@ class debugSwitch:
         print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
         return debug_tweet()
     def case_8(self): # Check Twitter login && Check pi-hole api reachability
-        print(apiC.get_cfgt()[5])
-        print(apiT(apiC.get_cfgt())[3])
+        print(apiC.get_cfgt()[4])
+        print(apiT(apiC.get_cfgt())[2])
         print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
         return
     def case_9(self): # Print All The Above Debug Options
