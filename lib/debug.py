@@ -40,15 +40,15 @@ class debugSwitch:
         print(apiT(apiC.get_cfgt())[3])
         return debug_tweet()
     def case_5(self): # Check pi-hole api reachability
-        print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+        print('if ' + str(pi(apiC.get_cfgp())[8]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
         return
     def case_6(self): # Print Test Tweet && Check pi-hole api reachability
-        print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+        print('if ' + str(pi(apiC.get_cfgp())[8]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
         return debug_tweet()
     def case_8(self): # Check Twitter login && Check pi-hole api reachability
         print(apiC.get_cfgt()[4])
         print(apiT(apiC.get_cfgt())[2])
-        print('if ' + str(pi()[9]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+        print('if ' + str(pi(apiC.get_cfgp())[8]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
         return
     def case_9(self): # Print All The Above Debug Options
         return debug_tweet()
