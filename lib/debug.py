@@ -71,7 +71,7 @@ def debug_tweet():
     print('if ' + str(pi(apiC.get_cfgp())[8]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
     
     print('\n Pihole Stats')
-    print(pi())
+    print(pi(apiC.get_cfgp()))
     
     print('\n SpeedTest Info')
     from lib.speed_test import speedtest_ip
