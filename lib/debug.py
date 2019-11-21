@@ -82,7 +82,7 @@ def debug_tweet():
     print('\n SpeedTest Info')
     from lib.speed_test import speedtest_ip
     ST_Stats = speedtest_ip()
-    print(ST_IP)
+    print(ST_Stats)
     
     print('\n The tweets that where created.')
     import lib.construct_tweet as ct # where the tweet is put together
