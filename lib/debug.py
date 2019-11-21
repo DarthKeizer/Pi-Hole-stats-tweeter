@@ -88,7 +88,7 @@ def debug_tweet():
     PHtweet = ct.PHtweet(ct.pi(apiC.get_cfgp()))
     SYtweet = ct.SYtweet(ct.si())
     NETtweet =  ct.NETtweet(ST_IP)
-    tweet = '\n\n Tweet 1\n' + PHtweet + '\n\n Tweet 2\n' + SYtweet + '\n\n Tweet 3\n' + Nettweet + '\n'
+    tweet = '\n\n Tweet 1\n' + PHtweet + '\n\n Tweet 2\n' + SYtweet + '\n\n Tweet 3\n' + NETtweet + '\n'
     print(tweet)
     
     print('\n Number of characters in tweet +/- 1 or 2') # will try and nail this down to a more accurate number
