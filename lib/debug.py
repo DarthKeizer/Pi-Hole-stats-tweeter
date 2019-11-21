@@ -103,7 +103,7 @@ def debug_tweet():
     totalS = (num_emoji * 2 + SYnum_other)
     print(str(num_emoji) + '(<- individual emjoi * 2) + ' + str(SYnum_other) + '(<- # of characters that aren\'t emoji\'s) = ' +  str(totalS))
 
-    Netnum_other = sum(0 if char in ignored_chars else 1 for char in Nettweet)
+    Netnum_other = sum(0 if char in ignored_chars else 1 for char in NETtweet)
     totalS = (num_emoji * 2 + Netnum_other)
     print(str(num_emoji) + '(<- individual emjoi * 2) + ' + str(Netnum_other) + '(<- # of characters that aren\'t emoji\'s) = ' +  str(totalS))
     return
