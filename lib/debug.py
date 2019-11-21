@@ -84,7 +84,7 @@ def debug_tweet():
     print('\n The tweets that where created.')
     import lib.construct_tweet as ct # where the tweet is put together
     # build tweet
-    PHtweet = ct.PHtweet(ct.pi())
+    PHtweet = ct.PHtweet(ct.pi(apiC.get_cfgp()))
     SYtweet = ct.SYtweet(ct.si())
     NETtweet =  ct.NETtweet(ct.sip())
     tweet = '\n\n Tweet 1\n' + PHtweet + '\n\n Tweet 2\n' + SYtweet + '\n\n Tweet 3\n' + Nettweet + '\n'
