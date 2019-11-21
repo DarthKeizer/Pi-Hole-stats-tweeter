@@ -75,7 +75,8 @@ def debug_tweet():
     
     print('\n SpeedTest Info')
     from lib.speed_test import speedtest_ip
-    print(speedtest_ip())
+    ST_IP = speedtest_ip()
+    print(ST_IP)
     
     print('\n System Stats')
     from lib.sys_info import sys_info as si # where system information is gathered
@@ -86,7 +87,7 @@ def debug_tweet():
     # build tweet
     PHtweet = ct.PHtweet(ct.pi(apiC.get_cfgp()))
     SYtweet = ct.SYtweet(ct.si())
-    NETtweet =  ct.NETtweet(ct.sip())
+    NETtweet =  ct.NETtweet(ST_IP)
     tweet = '\n\n Tweet 1\n' + PHtweet + '\n\n Tweet 2\n' + SYtweet + '\n\n Tweet 3\n' + Nettweet + '\n'
     print(tweet)
     
