@@ -71,23 +71,25 @@ def debug_tweet():
     print('if ' + str(pi(apiC.get_cfgp())[8]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
     
     print('\n Pihole Stats')
-    print(pi(apiC.get_cfgp()))
-    
-    print('\n SpeedTest Info')
-    from lib.speed_test import speedtest_ip
-    ST_IP = speedtest_ip()
-    print(ST_IP)
+    P_Stats = pi(apiC.get_cfgp())
+    print(P_Stats)
     
     print('\n System Stats')
     from lib.sys_info import sys_info as si # where system information is gathered
-    print(si())
+    S_Stats = si()
+    print(S_Stats)
+    
+    print('\n SpeedTest Info')
+    from lib.speed_test import speedtest_ip
+    ST_Stats = speedtest_ip()
+    print(ST_IP)
     
     print('\n The tweets that where created.')
     import lib.construct_tweet as ct # where the tweet is put together
     # build tweet
-    PHtweet = ct.PHtweet(ct.pi(apiC.get_cfgp()))
-    SYtweet = ct.SYtweet(ct.si())
-    NETtweet =  ct.NETtweet(ST_IP)
+    PHtweet = ct.PHtweet(P_Stats)
+    SYtweet = ct.SYtweet(S_Stats)
+    NETtweet =  ct.NETtweet(ST_Stats)
     tweet = '\n\n Tweet 1\n' + PHtweet + '\n\n Tweet 2\n' + SYtweet + '\n\n Tweet 3\n' + NETtweet + '\n'
     print(tweet)
     
