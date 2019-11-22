@@ -63,7 +63,7 @@ def debug_tweet():
     print(keys[4])
 
     print("\nCheck Twitter Login")
-    print(apiT(apiC.get_cfgt())[2])
+    print(apiT(keys)[2])
     
     print('\nPihole Address')
     P_add = apiC.get_cfgp()
