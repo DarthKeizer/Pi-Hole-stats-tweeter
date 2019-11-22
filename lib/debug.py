@@ -59,7 +59,8 @@ s = debugSwitch()
 def debug_tweet():
 
     print('\nTwitter Keys')
-    print(apiC.get_cfgt()[4])
+    keys = apiC.get_cfgt()
+    print(keys[4])
 
     print("\nCheck Twitter Login")
     print(apiT(apiC.get_cfgt())[2])
