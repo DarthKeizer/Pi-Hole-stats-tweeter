@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import json as js  # Used to parse config.json
+
+# check for config.json
+try:
+    with open('config.json') as data:
+        cfg = js.load(data)
+except FileNotFoundError as e:
+    print(e)
+    raise SystemExit
+
 # get data needed for pi-hole communication
 def get_cfgp():
-    import json as js  # Used to parse config.json
-    from requests import get # retreives file from a given url
-
-    # check for config.json
-    try:
-        with open('config.json') as data:
-            cfg = js.load(data)
-    except FileNotFoundError as e:
-        print(e)
-        raise SystemExit
     
     # verify && set key info from config.json
     cfgP = cfg['pihole']
     try: # try to get api_path for pi-hole
-        api = cfgP['api_path'] # get_cfgp()[0]
+        api = cfgP['api_path']
     except KeyError as e:
         print(str(e) + ' variable(s) not found.')
         raise SystemExit
@@ -29,15 +29,7 @@ def get_cfgp():
 
 # get data needed for twitter communication
 def get_cfgt():
-    import json as js  # Used to parse config.json
 
-    # check for config.json
-    try:
-        with open('config.json') as data:
-            cfg = js.load(data)
-    except FileNotFoundError as e:
-        print(e)
-        raise SystemExit
     # verify && set key info from config.json
     cfgT = cfg['twitter']
     try:
@@ -59,11 +51,6 @@ def get_cfgt():
 
     
 def get_cfgip():
-    
-    import json as js  # Used to parse config.json
-
-    with open('config.json') as data:
-            cfg = js.load(data)
     
     ipstackKey = cfg['ipstack']['access_key']
 
