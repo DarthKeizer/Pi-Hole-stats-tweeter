@@ -58,34 +58,34 @@ s = debugSwitch()
 # prints a test tweet and most (if not all) information used by this program
 def debug_tweet():
 
-    print('\n Twitter Keys')
+    print('\nTwitter Keys')
     print(apiC.get_cfgt()[4])
 
     print("\nCheck Twitter Login")
     print(apiT(apiC.get_cfgt())[2])
     
-    print('\n Pihole Address')
+    print('\nPihole Address')
     P_add = apiC.get_cfgp()
     print(P_add)
     
     print("\nPiHole Status")
-    print('if ' + str(pi(apiC.get_cfgp())[8]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
+    print('if ' + str(pi(P_add)[8]) + ' == 200 --> success \n\n Otherwise pi-hole URL is not configured properly. \n Check config.json.\n')
     
-    print('\n Pihole Stats')
+    print('\nPihole Stats')
     P_Stats = pi(P_add)
     print(P_Stats)
     
-    print('\n System Stats')
+    print('\nSystem Stats')
     from lib.sys_info import sys_info as si # where system information is gathered
     S_Stats = si()
     print(S_Stats)
     
-    print('\n SpeedTest Info')
+    print('\nSpeedTest Info')
     from lib.speed_test import speedtest_ip
     ST_Stats = speedtest_ip()
     print(ST_Stats)
     
-    print('\n The tweets that where created.')
+    print('\nThe tweets that where created.')
     import lib.construct_tweet as ct # where the tweet is put together
     # build tweet
     PHtweet = ct.PHtweet(P_Stats)
@@ -94,7 +94,7 @@ def debug_tweet():
     tweet = '\n\n Tweet 1\n' + PHtweet + '\n\n Tweet 2\n' + SYtweet + '\n\n Tweet 3\n' + NETtweet + '\n'
     print(tweet)
     
-    print('\n Number of characters in tweet +/- 1 or 2') # will try and nail this down to a more accurate number
+    print('\nNumber of characters in tweet +/- 1 or 2') # will try and nail this down to a more accurate number
     num_emoji = (sum(tweet.count(emoji) for emoji in UNICODE_EMOJI)) # accurately count and track emoji
     ignored_chars = UNICODE_EMOJI.copy() # thanks to https://stackoverflow.com/q/56214183/11456464
 
