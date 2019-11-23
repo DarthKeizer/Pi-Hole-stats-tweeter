@@ -15,6 +15,6 @@ def get_api():
     
     for item in verify.get_iterator():
       if 'screen_name' in item:
-        print(item['screen_name'])
+        print("logged in as @" + item['screen_name'] +".")
 
     return (KEYS_and_API)
