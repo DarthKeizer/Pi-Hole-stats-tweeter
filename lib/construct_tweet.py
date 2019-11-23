@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from lib.pihole_info import pihole_info # where pihole information is gathered
-import lib.pihole_info
+from lib.pihole_info import pihole_info as pi # where pihole information is gathered
+from lib.pihole_info import cp
 from lib.sys_info import sys_info as si # where system information is gathered
 from lib.speed_test import speedtest_ip as sip # where speedtest information is gathered
 
