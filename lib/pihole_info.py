@@ -12,7 +12,7 @@ def pihole_info():
 
     # verify pi-hole reachability
     try:
-        pihole_api = get(cp) # is passed from get_cfgp
+        pihole_api = get(cp())# is passed from get_cfgp
         x = pihole_api.status_code
     except Exception as e:
         x = 'Could not contact API: ' + str(e)
