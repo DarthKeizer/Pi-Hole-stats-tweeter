@@ -15,7 +15,7 @@ def tweet_it():
     # build tweets
     tweets = bt()
     # send tweets
-    th = Threader(tweets, k_a[0], wait=2, end_string=False)
+    th = Threader(tweets, k_a, wait=2, end_string=False)
     th.send_tweets()
     # print tweet id's to console
     print(th.tweet_ids_)

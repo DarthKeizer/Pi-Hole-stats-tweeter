@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from lib.pihole_info import pihole_info as pi # where pihole information is gathered
-from lib.pihole_info import cp
 from lib.sys_info import sys_info as si # where system information is gathered
 from lib.speed_test import speedtest_ip as sip # where speedtest information is gathered
 
@@ -56,7 +55,7 @@ def NETtweet(stp):
     
 def build_tweet():
     # build tweet
-    PH_tweet = PHtweet(pi(cp()))
+    PH_tweet = PHtweet(pi())
     print("Pi-hole Tweet Made")
     SY_tweet = SYtweet(si())
     print("System Tweet Made")
