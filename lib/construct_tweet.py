@@ -51,3 +51,15 @@ def NETtweet(stp):
     Nettweet += '\n#Speedtest'
 
     return (Nettweet)
+    
+    
+def build_tweet():
+    # build tweet
+    PH_tweet = PHtweet(pi(pi.cfgp()))
+    SY_tweet = SYtweet(si())
+    NET_tweet =  NETtweet(sip())
+    # and send it
+
+    tweets = [PH_tweet, SY_tweet, NET_tweet]
+    
+    return(tweets)
