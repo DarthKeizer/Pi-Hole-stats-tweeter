@@ -86,4 +86,4 @@ Blocklist Size</span>: 761,313
 <span class="hljs-attribute">Continent</span>: North America
 <span class="hljs-attribute">Share</span>: http://www.speedtest.net/result/8438272507.png
 <span class="hljs-comment">#Speedtest</span>
-</code></pre><p><img src="./.github/tweetStats.gif" alt="example"></p>
+</code></pre><p><img src=".github/tweetStats.gif" alt="example"></p>
