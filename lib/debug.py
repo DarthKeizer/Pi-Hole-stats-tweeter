@@ -60,7 +60,7 @@ def debug_tweet():
 
     print('\nTwitter Keys')
     keys = apiC.get_cfgt()
-    print(keys[4])
+    print(keys)
 
     print("\nCheck Twitter Login")
     print(apiT(keys)[2])
