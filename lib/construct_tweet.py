@@ -21,7 +21,6 @@ def PHtweet(ph):
     PHtweet += '\nGravity Last Updated: ' + ph[7] # gravity last updated (your local time)
     PHtweet += '\n#Python'
 
-    print("Pi-hole Tweet Made")
     return (PHtweet)
     
 def SYtweet(sy):
@@ -36,7 +35,6 @@ def SYtweet(sy):
     SYtweet += '\nBoot Time: ' + sy[5] # time when system booted (your local time)
     SYtweet += '\n#' + sy[6] # create hashtag from OS name
     
-    print("System Tweet Made")
     return (SYtweet)
     
 def NETtweet(stp):
@@ -53,16 +51,17 @@ def NETtweet(stp):
     Nettweet += '\nShare: ' + stp[7] # give sharable speedtest link
     Nettweet += '\n#Speedtest'
     
-    print("Speedtest Tweet Made")
     return (Nettweet)
     
     
 def build_tweet():
     # build tweet
     PH_tweet = PHtweet(pi(cp()))
+    print("Pi-hole Tweet Made")
     SY_tweet = SYtweet(si())
+    print("System Tweet Made")
     NET_tweet =  NETtweet(sip())
-    # and send it
+    print("Speedtest Tweet Made")
 
     tweets = [PH_tweet, SY_tweet, NET_tweet]
     
