@@ -14,7 +14,7 @@ def get_api():
     verify = KEYS_and_API.request('account/verify_credentials')
     
     for item in verify.get_iterator():
-    if 'screen_name' in item:
+      if 'screen_name' in item:
         print item['screen_name']
 
 
