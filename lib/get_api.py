@@ -11,7 +11,7 @@ def get_api():
     
     KEYS_and_API = TwitterAPI(**keys)
     
-    verify = KEYS_and_API.request('account/verify_credentials')
+    verify = KEYS_and_API.request.json('account/verify_credentials')
 
 
     print(verify)
