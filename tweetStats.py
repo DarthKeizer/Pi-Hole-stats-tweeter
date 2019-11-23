@@ -3,7 +3,7 @@
 from lib.get_config import get_cfgt as cfgt # where all the config data lives
 from lib.get_config import get_cfgp as cfgp # pihole data
 from lib.get_api import get_api as ga # where we interact with the Twitter API
-import lib.construct_tweet as ct # where the tweet is put together
+from lib.construct_tweet import build_tweet as bt # where the tweet is put together
 from lib.debug import debug_tweet, d1, s # All the deugging happens here && parses for passed arguements
 
 
@@ -14,13 +14,12 @@ def tweet_it(apiTW):
     
     print(apiTW[2])
 
-    # build tweet
-    PHtweet = ct.PHtweet(ct.pi(cfgp()))
-    SYtweet = ct.SYtweet(ct.si())
-    NETtweet =  ct.NETtweet(ct.sip())
-    # and send it
-
-    tweets = [PHtweet, SYtweet, NETtweet]
+    # build tweets
+    
+    tweets = bt()
+    
+    # send tweets
+    
     th = Threader(tweets, apiTW[1], wait=2, end_string=False)
     th.send_tweets()
 
