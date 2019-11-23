@@ -19,11 +19,11 @@ def tweet_it():
     
     # send tweets
     
-    th = Threader(tweets, k_a, wait=2, end_string=False)
+    th = Threader(tweets, k_a[0], wait=2, end_string=False)
     th.send_tweets()
 
     for x in th.tweet_ids_:
-        print('Status posted! https://twitter.com/' + apiTW[0].me().screen_name + '/status/' + str(x))
+        print('Status posted! https://twitter.com/' + k_a[1] + '/status/' + str(x))
 
 
 # Make it Happen!!

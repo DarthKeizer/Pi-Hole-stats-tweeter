@@ -17,4 +17,4 @@ def get_api():
       if 'screen_name' in item:
         print("logged in as @" + item['screen_name'] +".")
 
-    return (KEYS_and_API)
+    return (KEYS_and_API, item['screen_name'])
