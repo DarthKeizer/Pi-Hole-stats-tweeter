@@ -2,11 +2,10 @@
 # -*- coding: utf-8 -*-
 # retreive data from pi-hole api.php (probably will break in a future update of pi-hole)
 
-from lib.get_config import get_cfgp as cp # where the config information lives
-
 def pihole_info():
     
     from lib.commaValue import commaValue as cv # insert commas where needed
+    from lib.get_config import get_cfgp as cp # where the config information lives
     from datetime import datetime as dt # used to calculate UTC from epoch
     from requests import get # handles communication to pi-hole
 

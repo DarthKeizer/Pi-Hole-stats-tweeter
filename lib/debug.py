@@ -70,10 +70,10 @@ def debug_tweet():
     print(P_add)
     
     print("\nPiHole Status")
-    print('if ' + str(pi(P_add)[8]) + ' == 200 --> success \n\nOtherwise pi-hole URL is not configured properly. \nCheck config.json.\n')
+    P_Stats = pi()
+    print('if ' + str(P_Stats[8]) + ' == 200 --> success \n\nOtherwise pi-hole URL is not configured properly. \nCheck config.json.\n')
     
     print('\nPihole Stats')
-    P_Stats = pi(P_add)
     print(P_Stats)
     
     print('\nSystem Stats')
