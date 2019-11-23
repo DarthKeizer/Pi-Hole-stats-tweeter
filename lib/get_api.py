@@ -17,7 +17,4 @@ def get_api():
       if 'screen_name' in item:
         print(item['screen_name'])
 
-
-    print(verify)
-
     return (KEYS_and_API)
