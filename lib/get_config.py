@@ -32,22 +32,10 @@ def get_cfgt():
 
     # verify && set key info from config.json
     cfgT = cfg['twitter']
-    try:
-        consumer_key = cfgT['consumer_key'] # get_cfgt()[0]
-        consumer_secret = cfgT['consumer_secret'] # get_cfgt()[1]
-        access_token_key = cfgT['access_token'] # get_cfgt()[2]
-        access_token_secret = cfgT['access_token_secret'] # get_cfg()[3]
-    except KeyError as e:
-        print(str(e) + ' variable(s) not found.')
-        raise SystemExit
-    if not (consumer_key, consumer_secret, access_token_key, access_token_secret):
-        print('2 Please check your config.ini.')
-        raise SystemExit
-    # return as tuple to ensure data integrity
-    
+
     keys = dict(consumer_key=cfgT['consumer_key'], consumer_secret=cfgT['consumer_secret'], access_token_key=cfgT['access_token'], access_token_secret=cfgT['access_token_secret'])
     
-    return (consumer_key, consumer_secret, access_token_key, access_token_secret, keys)
+    return (keys)
 
     
 def get_cfgip():
