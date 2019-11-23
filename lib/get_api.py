@@ -18,4 +18,4 @@ def get_api():
 
     print("Logged in as @" + str(name) + "."
 
-    return (KEYS_and_API)
+    return(KEYS_and_API)
