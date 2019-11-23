@@ -12,19 +12,13 @@ from threader import Threader
 def tweet_it():
 
     k_a = ga()
-
     # build tweets
-    
     tweets = bt()
-    
     # send tweets
-    
     th = Threader(tweets, k_a[0], wait=2, end_string=False)
     th.send_tweets()
-
-    for x in th.tweet_ids_:
-        print('Status posted! https://twitter.com/' + k_a[1] + '/status/' + str(x))
-
+    # print tweet id's to console
+    print(th.tweet_ids_)
 
 # Make it Happen!!
 def main():
