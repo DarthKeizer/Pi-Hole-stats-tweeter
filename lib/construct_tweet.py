@@ -20,7 +20,8 @@ def PHtweet(ph):
     PHtweet += '\nPrivacy Level: ' + ph[6] # privacy level
     PHtweet += '\nGravity Last Updated: ' + ph[7] # gravity last updated (your local time)
     PHtweet += '\n#Python'
-    
+
+    print("Pi-hole Tweet Made")
     return (PHtweet)
     
 def SYtweet(sy):
@@ -35,6 +36,7 @@ def SYtweet(sy):
     SYtweet += '\nBoot Time: ' + sy[5] # time when system booted (your local time)
     SYtweet += '\n#' + sy[6] # create hashtag from OS name
     
+    print("System Tweet Made")
     return (SYtweet)
     
 def NETtweet(stp):
@@ -50,7 +52,8 @@ def NETtweet(stp):
     Nettweet += '\nContinent: ' + stp[6] # give continent to preserve exact location
     Nettweet += '\nShare: ' + stp[7] # give sharable speedtest link
     Nettweet += '\n#Speedtest'
-
+    
+    print("Speedtest Tweet Made")
     return (Nettweet)
     
     

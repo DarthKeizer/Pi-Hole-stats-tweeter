@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from lib.get_config import get_cfgt as cfgt
 # login to Twitter
-def get_api(keys):
+def get_api():
+
+    keys = cfgt()
 
     import tweepy as tp # used to verify login creds is also
     from TwitterAPI import TwitterAPI
     
-    auth = tp.OAuthHandler(keys[0], keys[1])
-    auth.set_access_token(keys[2], keys[3])
-    api = tp.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
-    # verify twitter credentials
-    try:
-        loginResult = ('Logged in as @' + api.me().screen_name)
-    except tp.error.TweepError as e:
-        print(e.reason + 'This your down fall')
-        return
-        
-    KEYSapi = TwitterAPI(**keys[4])
+        KEYS_and_API = TwitterAPI(**keys[4])
     
-    return (api, KEYSapi, loginResult)
+        verify = KEYS_and_API.request('account/verify_credentials')
+        
+        name = verify['screen_name']
+
+        print("Logged in as @" + str(name) + "."
+        
+    
+    
+    return (KEYS_and_API)
