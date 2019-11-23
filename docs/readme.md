@@ -1,10 +1,14 @@
-# tweetStats
+#tweetStats
+
 
 Send a daily tweet with your Pi-Hole statistics and other system information!
 
-## How to use
 
-### Prerequisites
+##How to use
+
+
+###Prerequisites
+
 
   * Pi-hole
     
@@ -19,15 +23,16 @@ Send a daily tweet with your Pi-Hole statistics and other system information!
    
     - install speedtest-cli from your package manager
     - `access_key` = get this from https://ipstack.com/signup/free
+    
 
-### Guided Setup (install script)
+###Guided Setup (install script)
 
 ```
 wget https://raw.githubusercontent.com/mwoolweaver/tweetStats/master/install.sh
 ./install.sh
 ```
 
-### Manual Setup (no install script)
+###Manual Setup (no install script)
 
 1. `git clone https://github.com/mwoolweaver/tweetStats.git`
 2. Install Python 3
@@ -37,7 +42,7 @@ wget https://raw.githubusercontent.com/mwoolweaver/tweetStats/master/install.sh
 6. ???
 7. Profit
 
-## cmd line args for testing
+##cmd line args for testing
 
   *  -db will print the tweet to be sent and all other variables that are used in the proccess.
 
@@ -45,15 +50,15 @@ wget https://raw.githubusercontent.com/mwoolweaver/tweetStats/master/install.sh
 
   *  -dbp will make sure the pi-hole api can be reached. 
 
-## Cronjob
+##Cronjob
 
 test cron job w/ `sudo run-parts /etc/cron.daily`
 
-### Use Install Script
+###Use Install Script
 
 or 
 
-### Manual Setup
+###Manual Setup
 
 creaate file ```/etc/cron.daily/tweetStats``` with the following contents
 
