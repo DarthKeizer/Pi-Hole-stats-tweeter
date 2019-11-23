@@ -11,7 +11,11 @@ def get_api():
     
     KEYS_and_API = TwitterAPI(**keys)
     
-    verify = KEYS_and_API.json('account/verify_credentials')
+    verify = KEYS_and_API.request('account/verify_credentials')
+    
+    for item in verify.get_iterator():
+    if 'screen_name' in item:
+        print item['screen_name']
 
 
     print(verify)
