@@ -32,14 +32,28 @@ def get_cfgt():
 
     # verify && set key info from config.json
     cfgT = cfg['twitter']
-
-    keys = dict(consumer_key=cfgT['consumer_key'], consumer_secret=cfgT['consumer_secret'], access_token_key=cfgT['access_token'], access_token_secret=cfgT['access_token_secret'])
-    
+    try:
+        keys = dict(consumer_key=cfgT['consumer_key'], consumer_secret=cfgT['consumer_secret'], access_token_key=cfgT['access_token'], access_token_secret=cfgT['access_token_secret'])
+    except KeyError as e:
+        print(str(e) + ' variable(s) not found.')
+        raise SystemExit
+    if not (keys): #verify value is not None
+        print('Please check your config.ini.')
+        raise SystemExit
+        
     return (keys)
 
     
 def get_cfgip():
     
-    ipstackKey = cfg['ipstack']['access_key']
+    cfgip = cfg['ipstack']
+    try: # try to get api_path for pi-hole
+        ipstackKey = cfgip['access_key']
+    except KeyError as e:
+        print(str(e) + ' variable(s) not found.')
+        raise SystemExit
+    if not (ipstackKey): #verify value is not None
+        print('Please check your config.ini.')
+        raise SystemExit
 
     return (ipstackKey)
