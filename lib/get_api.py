@@ -6,8 +6,6 @@ from lib.get_config import get_cfgt as cfgt
 def get_api():
 
     keys = cfgt()
-
-    import tweepy as tp # used to verify login creds is also
     from TwitterAPI import TwitterAPI
     
     KEYS_and_API = TwitterAPI(**keys[4])
@@ -18,4 +16,4 @@ def get_api():
 
     print("Logged in as @" + str(name) + "."
 
-    return(KEYS_and_API)
+    return (KEYS_and_API)
