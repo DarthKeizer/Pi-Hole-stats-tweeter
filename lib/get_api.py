@@ -10,14 +10,12 @@ def get_api():
     import tweepy as tp # used to verify login creds is also
     from TwitterAPI import TwitterAPI
     
-        KEYS_and_API = TwitterAPI(**keys[4])
+    KEYS_and_API = TwitterAPI(**keys[4])
     
-        verify = KEYS_and_API.request('account/verify_credentials')
-        
-        name = verify['screen_name']
+    verify = KEYS_and_API.request('account/verify_credentials')
+    
+    name = verify['screen_name']
 
-        print("Logged in as @" + str(name) + "."
-        
-    
-    
+    print("Logged in as @" + str(name) + "."
+
     return (KEYS_and_API)
