@@ -12,9 +12,8 @@ def get_api():
     KEYS_and_API = TwitterAPI(**keys)
     
     verify = KEYS_and_API.request('account/verify_credentials')
-    
-    name = verify['screen_name']
 
-    print("Logged in as @" + str(name) + ".")
+
+    print(verify)
 
     return (KEYS_and_API)
