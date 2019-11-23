@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # retreive data from pi-hole api.php (probably will break in a future update of pi-hole)
 
-from lib.get_config import get_cfgp # where the config information lives
+from lib.get_config import get_cfgp as cp # where the config information lives
 
 def pihole_info(cfgp):
     

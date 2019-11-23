@@ -55,7 +55,7 @@ def NETtweet(stp):
     
 def build_tweet():
     # build tweet
-    PH_tweet = PHtweet(pi(pi.cfgp()))
+    PH_tweet = PHtweet(pi(pi.cp()))
     SY_tweet = SYtweet(si())
     NET_tweet =  NETtweet(sip())
     # and send it
