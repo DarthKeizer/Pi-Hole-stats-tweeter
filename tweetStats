@@ -1,3 +1,3 @@
 #!/bin/bash
 cd /home/VALUE7/tweetStats
-python3 ./tweetStats.py >> tweetStats.txt
+python3 ./_tweetStats.py >> tweetStats.txt
